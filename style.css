@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.sticky-nav{
+    width: 60px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    overflow: hidden;
+    font-size: 15px;
+    white-space: nowrap;
+    border-right: 1px solid rgba(118, 118, 118, 0.12);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 393;
+}
+.nav-title{
+    display: flex;
+    align-items: center;
+    background-color: rgb(28, 97, 231);
+    margin: 8px;
+    padding: 0 13px;
+    height: 45px;
+    font-size: 16px;
+    color: white;
+    border-radius: 100px;
+}
+.sticky-nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.first-hover-content{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    height: 45px;
+    padding: 4px 17px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.first-hover-content img{
+    max-width: 24px;
+}
+.sticky-nav-span {
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.4s ease-out, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.sticky-nav:hover{
+    width: 300px;
+    overflow: visible;
+}
+.sticky-nav:hover .sticky-nav-span {
+    opacity: 1; 
+}
+.sticky-nav a:hover{
+    color:rgb(28, 97, 231);
+}
+.whole-sec-hover {
+    position: absolute;
+    left: 300px;
+    top: 0px;
+    width: 275px;
+    height: 100%;
+    border-right: 1px solid gray;
+    border-top-right-radius: 3%;
+    border-bottom-right-radius: 3%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-15px) translateY(0) translateZ(0);
+    transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.4s ease-out, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.sub-sub-menu{
+    padding: 0 15px;
+    height: 35px;
+    color: #838383;
+    font-size: 14px;
+}
+.first-hover:hover > .whole-sec-hover{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+.sticky-nav:hover > .frontpage{
+    z-index: 392;
+    background-color: gray;
+}

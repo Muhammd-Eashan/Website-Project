@@ -15,6 +15,7 @@
     border-right: 1px solid rgba(118, 118, 118, 0.12);
     transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
     z-index: 393;
+    background-color: white;
 }
 .nav-title{
     display: flex;
@@ -70,6 +71,7 @@
     border-bottom-right-radius: 3%;
     opacity: 0;
     visibility: hidden;
+    background-color: white;
     transform: translateX(-15px) translateY(0) translateZ(0);
     transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.4s ease-out, transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -84,7 +86,77 @@
     visibility: visible;
     transform: translateX(0);
 }
-.sticky-nav:hover > .frontpage{
+.close-side {
+    width: 100%;
+    height: 100%;
+    position: fixed;
     z-index: 392;
-    background-color: gray;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),z-index 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s,top 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s
+}
+.sticky-nav:hover ~ .close-side {
+    opacity: 1;
+    visibility: visible;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.general-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 220px;
+}
+
+.search-bar-div {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.search-bar{
+    width: 97%;
+    height: 46px;
+    padding-left: 15px;
+    padding-right: 46px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 35px;
+    margin-left: 20px;
+    color: #838383;
+}
+.search-bar:focus {
+    border: 1px solid rgba(0,0,0,0.1); 
+    outline: none;
+}
+
+.search-button{
+    position: relative;
+    right: 42px;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(28, 97, 231);
+    height: 38px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.support {
+    display: flex;
+    align-items: center;
+    width: 300px;
 }

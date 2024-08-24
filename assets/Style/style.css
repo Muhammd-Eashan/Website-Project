@@ -90,6 +90,7 @@
     width: 100%;
     height: 100%;
     position: fixed;
+    top: 0;
     z-index: 392;
     background-color: rgba(0,0,0,0.7);
     opacity: 0;
@@ -103,7 +104,6 @@
 }
 .main-header {
     display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row;
     width: 100%;
@@ -111,10 +111,11 @@
 
 .general-header {
     display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
     flex-direction: row;
-    width: 100%;
+    justify-content: space-between;
+    padding: 0 50px 0 80px;
+    margin-left: 10px;
 }
 
 .logo {
@@ -125,9 +126,10 @@
 }
 
 .search-bar-div {
-    flex-grow: 1;
     display: flex;
     align-items: center;
+    flex: 1 1 0%;
+    margin-left: 20px;
 }
 .search-bar{
     width: 97%;
@@ -136,7 +138,6 @@
     padding-right: 46px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 35px;
-    margin-left: 20px;
     color: #838383;
 }
 .search-bar:focus {
@@ -155,8 +156,13 @@
     border-radius: 50%;
 }
 
-.support {
+.support-section {
     display: flex;
     align-items: center;
-    width: 300px;
+    gap: 20px;
+}
+.support-24{
+    display: flex;
+    gap: 10px;
+    padding-inline: 10px;
 }

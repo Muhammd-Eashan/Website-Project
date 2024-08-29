@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/Style/style.css">
-    <script src="/assets/Javascript/javascript.js"></script>
+    <script src="/assets/Javascript/javascript.js" defer></script>
 </head>
 <body>
         <div class="sticky-nav">
@@ -386,14 +386,14 @@
                         </div>
                     </div>
                     <div class="sub-header">
-                        <div class="container h-[60px]">
+                        <div class="container h-[60px] pr-[100px]">
                             <div class="sub-header-content">
                                 <div class="all-categories">
-                                    <a href="#" class="flex items-center justify-center bg-white rounded-[42px] h-[42px] px-[3px] text-decoration-none">
+                                    <a href="#" id="all-categories-btn" class="flex items-center justify-center bg-white rounded-[42px] h-[42px] px-[3px] text-decoration-none">
                                         <div class="bars-icon">
                                             <i class="fa-solid fa-bars text-xl"></i>
                                         </div>
-                                        <span class="mx-[10px] text-black text-[15px]">All Categories</span>
+                                        <span class="mx-[10px] text-[15px]">All Categories</span>
                                     </a>
                                 </div>
                                 <div class="header-menu">
@@ -430,7 +430,7 @@
                                 <div class="menu-content">
                                     <div class="content-1 h-[40px] px-[10px]">
                                         <ul class="flex gap-[5px]">
-                                            <li>
+                                            <li class="hover-container">
                                                 <a class="content-1-link links" href="#">
                                                     <span>USA</span>
                                                     <span><i class="fa-solid fa-chevron-down text-[6px] relative bottom-[3px] left-[4px] text-[rgba(82,82,82,.45)]"></i></span>
@@ -446,12 +446,12 @@
                                                     </ul>
                                                 </div>
                                             </li>
-                                            <li>
+                                            <li class="hover-container">
                                                 <a class="content-1-link links" href="#">
                                                     <span>USD</span>
                                                     <span><i class="fa-solid fa-chevron-down text-[6px] relative bottom-[3px] left-[4px] text-[rgba(82,82,82,.45)]"></i></span>
                                                 </a>
-                                                <div class="usa-hover usd">
+                                                <div class="usa-hover">
                                                     <ul class="p-[20px] text-[#838383]">
                                                         <li >
                                                             <a class="flex text-[14px]" href="#">EUR</a>
@@ -466,10 +466,36 @@
                                             </div>
                                         </ul>
                                     </div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    <div class="icons" id="sign-in-btn">
+                                        <a href="#">
+                                            <span><i class="fa-regular fa-user"></i></span>
+                                        </a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#">
+                                            <span><i class="fa-solid fa-shuffle"></i>
+                                                <span class="upper-icon">0</span>
+                                            </span>
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#">
+                                            <span><i class="fa-regular fa-heart"></i>
+                                                <span class="upper-icon">0</span>
+                                            </span>
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="icons" id="shopping-cart-btn">
+                                        <a class="bg-primary" href="#">
+                                            <span><i class="fa-solid fa-cart-shopping text-[18px] text-[white]"></i>
+                                                <span class="upper-icon">0</span>
+                                            </span>
+                                            <span class="relative text-[14px] left-[15px]">$0.00</span>
+                                            
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -481,5 +507,68 @@
         </div>
 
         <div class="close-side"></div>
+        <div class="shopping-cart">
+            <div class="shopping-cart-heading">
+                <span class="flex-1 basis-auto text-[18px] font-bold">Shopping Cart</span>
+                <div id="close-btn" class="relative top-[2px]">
+                    <a href="#" class="flex items-center text-decoration-none text-[#333] hover:text-[#767676]">
+                        <span class="mr-[5px] text-[24px]"><i class="fa-solid fa-xmark"></i></span>
+                        <span>Close</span>
+                    </a>
+                </div>
+            </div>
+            <div class="rest-of-shopping-cart flex-1 basis-auto text-center">
+                <div class="mt-[20px] px-[15px] py-[10px]">
+                    <i class="fa-solid fa-cart-arrow-down mb-[20px] block text-[86px] text-[rgb(0,0,0,0.07)]"></i>
+                    <p class="mb-[20px] block text-[rgb(16,16,16,.9)] font-bold">No products in the cart.</p>
+                    <a href="#" class="btn btn-primary">Return To Shop</a>
+                </div>
+            </div>
+        </div>
+        <div class="sign-in-form shopping-cart">
+            <div class="shopping-cart-heading">
+                <span class="flex-1 basis-auto text-[18px] font-bold">Sign in</span>
+                <div id="close-btn" class="relative top-[2px]">
+                    <a href="#" id="close-btn-2" class="flex items-center text-decoration-none text-[#333] hover:text-[#767676]">
+                        <span class="mr-[5px] text-[24px]"><i class="fa-solid fa-xmark"></i></span>
+                        <span>Close</span>
+                    </a>
+                </div>
+            </div>
+            <form class="p-[20px] border-b border-gray-300">
+                <p class="mb-[20px]">
+                    <label for="username" class="text-[17px] mb-[5px]">
+                        Username or email address
+                        <span class="text-danger text-[20px]">*</span>
+                    </label>
+                    <input class="border rounded-[5px] h-[42px] w-[100%] px-[15px] text-gray-400 focus:border-gray-300 focus:outline-none" type="text">
+                </p>
+                <p class="mb-[20px]">
+                    <label for="username" class="text-[17px] mb-[5px]">
+                        Password
+                        <span class="text-danger text-[20px]">*</span>
+                    </label>
+                    <span>
+                        <input id="input" class="border rounded-[5px] h-[42px] w-[100%] pl-[15px] pr-[42px] text-gray-400 focus:border-gray-300 focus:outline-none" type="password">
+                        <span id="show-password-btn" class="absolute right-[30px] top-[25.6%]"><i id="eye" class="fa-regular fa-eye"></i></span>
+                    </span>
+                </p>
+                <button class="btn btn-primary w-[100%] h-[42px] text-[14px] mb-[20px]">Log In</button>
+                <div class="flex justify-between gap-[10px]">
+                    <label for="">    
+                        <input class="relative top-[2px] mr-[2px]" type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="text-primary hover:underline">Lost your password?</a>
+                </div>    
+            </form>
+            <div class="rest-of-shopping-cart flex-1 basis-auto text-center">
+                <div class="mt-[20px] px-[15px] pt-[10px] pb-[20px] border-b border-gray-300">
+                    <i class="fa-regular fa-user mb-[20px] block text-[86px] text-[rgb(0,0,0,0.07)]"></i>
+                    <p class="mb-[20px] block text-[rgb(16,16,16,.9)] font-bold">No account yet?</p>
+                    <a href="#" class="border-b-[2px] border-blue-500 hover:text-gray-400 hover:border-gray-400 transition duration-200 ease">Create An Account</a>
+                </div>
+            </div>
+        </div>
 </body>
 </html>

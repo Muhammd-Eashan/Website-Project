@@ -95,7 +95,8 @@
     background-color: rgba(0,0,0,0.7);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),z-index 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s,top 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1),z-index 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s,top 0s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    z-index: 3;
 }
 .sticky-nav:hover ~ .close-side {
     opacity: 1;
@@ -358,3 +359,43 @@
     width: 10px !important;
     background-color: #333 !important;
 }
+.row-1-content{
+    height: 277px;
+    margin-bottom: 20px;
+    transition: transform 0.5s cubic-bezier(0, 0, 0.44, 1.18);
+    overflow: hidden;
+    border-radius: 10px;
+}
+.row-1-content img{
+    transition: transform 0.5s cubic-bezier(0, 0, 0.44, 1.18);
+    height: 277px;
+}
+.row-1-content:hover img{
+    transform: scale(1.09);
+}
+.countdown-container {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .countdown-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 54px;
+    min-height: 43px;
+  }
+  
+  .countdown-item span {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .countdown-item p {
+    margin: 0;
+    font-size: 70%;
+    color: gray;
+  }

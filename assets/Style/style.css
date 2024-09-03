@@ -310,6 +310,13 @@
     border-radius: 50%;
     box-shadow: 0 0 4px rgba(0,0,0,0.17);
 }
+.cart{
+    font-size: 20px !important;
+    color: white !important;
+}
+.cart:hover{
+    color: #838383 !important;
+}
 .icons a:hover{
     color: #838383;
 }
@@ -339,4 +346,15 @@
 }
 .slash:before{
     content: "\f070";
+}
+.slider{
+    width: 675px;
+    height: 460px;
+}
+.indicators{
+    border: 1px solid white !important;
+    border-radius: 10px !important;
+    height: 10px !important;
+    width: 10px !important;
+    background-color: #333 !important;
 }

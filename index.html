@@ -8,7 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/Style/style.css">
-    <script src="/assets/Javascript/javascript.js" defer></script>
 </head>
 <body>
         <div class="sticky-nav">
@@ -40,7 +39,7 @@
                             <li>
                                 <a href="#" class="first-hover-content text-[14px] text-[#333]"> <span class="uppercase">Tablets</span></a>
                                 <ul>
-                                <li><a href="#"class="first-hover-content sub-sub-menu">Apple Ipad</a></li>
+                                <li><a href="#"class="first-hover-content sub-sub-menu">Apple iPad</a></li>
                                 <li><a href="#"class="first-hover-content sub-sub-menu">Android tablets</a></li>
                                 <li><a href="#"class="first-hover-content sub-sub-menu">Windows tablets</a></li>
                                 </ul>
@@ -169,7 +168,7 @@
                             <li>
                                 <a href="#" class="first-hover-content uppercase mt-[10px] text-[14px] text-[#333]"> <span>Mobile Phones</span></a>
                                 <ul class="sub-menu">
-                                    <li><a href="#"class="first-hover-content sub-sub-menu">Apple Iphone</a></li>
+                                    <li><a href="#"class="first-hover-content sub-sub-menu">Apple iPhone</a></li>
                                     <li><a href="#"class="first-hover-content sub-sub-menu">Android Smartphones</a></li>
                                     <li><a href="#"class="first-hover-content sub-sub-menu">Button Mobile Phones</a></li>
                                 </ul>
@@ -350,7 +349,7 @@
             </ul>
         </div>
         <div class="website-wrapper ml-[60px]">
-            <header class="mb-[40px] pt-[140px]">
+            <header class="pt-[140px]">
                 <div class="main-header absolute top-[0] left-[0]">
                     <div class="container">
                     <div class="general-header">
@@ -386,7 +385,7 @@
                         </div>
                     </div>
                     <div class="sub-header">
-                        <div class="container h-[60px] pr-[100px]">
+                        <div class="container pr-[100px]">
                             <div class="sub-header-content">
                                 <div class="all-categories">
                                     <a href="#" id="all-categories-btn" class="flex items-center justify-center bg-white rounded-[42px] h-[42px] px-[3px] text-decoration-none">
@@ -465,47 +464,112 @@
                                                 </ul>
                                             </div>
                                         </ul>
-                                    </div>
-                                    <div class="icons" id="sign-in-btn">
-                                        <a href="#">
-                                            <span><i class="fa-regular fa-user"></i></span>
-                                        </a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#">
-                                            <span><i class="fa-solid fa-shuffle"></i>
-                                                <span class="upper-icon">0</span>
-                                            </span>
-                                            
-                                        </a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#">
-                                            <span><i class="fa-regular fa-heart"></i>
-                                                <span class="upper-icon">0</span>
-                                            </span>
-                                            
-                                        </a>
-                                    </div>
-                                    <div class="icons" id="shopping-cart-btn">
-                                        <a class="bg-primary" href="#">
-                                            <span><i class="fa-solid fa-cart-shopping text-[18px] text-[white]"></i>
-                                                <span class="upper-icon">0</span>
-                                            </span>
-                                            <span class="relative text-[14px] left-[15px]">$0.00</span>
-                                            
-                                        </a>
-                                    </div>
+                                </div>
+                                <div class="icons" id="sign-in-btn">
+                                <a href="#">
+                                <span><i class="fa-regular fa-user"></i></span>
+                                </a>
+                                </div>
+                                <div class="icons">
+                                    <a href="#">
+                                        <span><i class="fa-solid fa-shuffle"></i>
+                                            <span class="upper-icon">0</span>
+                                        </span>
+                                        
+                                    </a>
+                                </div>
+                                <div class="icons">
+                                    <a href="#">
+                                        <span><i class="fa-regular fa-heart"></i>
+                                            <span class="upper-icon">0</span>
+                                        </span>
+                                        
+                                    </a>
+                                </div>
+                                <div class="icons" id="shopping-cart-btn">
+                                    <a class="cart bg-primary group" href="#">
+                                        <span><i class="fa-solid fa-cart-shopping"></i>
+                                            <span class="upper-icon">0</span>
+                                        </span>
+                                        <span class="relative text-[14px] left-[10px] text-[black] pl-[5px] group-hover:text-[#838383]">$0.00</span>
+                                    </a>
+                            
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </header>
-            
-        </div>
 
+            </header>
+            <div class="main-page bg-[rgb(246,246,246)] h-[5000px] container-fluid">
+                <div class="container h-[100%]">
+                    <div class="main-page-content h-[100%] w-[90%] ml-[55px] pt-[20px]">
+                        <div class="first-row-content">
+                            <div class="column-1 col-lg-6 col-md-6 col-sm-12">
+                                <div class="slider">
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators bg-white w-[65px] h-[24px] items-center rounded-[20px]  left-[30%]">
+                                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active indicators" aria-current="true" aria-label="Slide 1"></button>
+                                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" class="indicators"></button>
+                                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" class="indicators"></button>
+                                        </div>
+                                        <div class="carousel-inner rounded-[10px]">
+                                          <div class="carousel-item active">
+                                              <div class="image-content absolute text-white text-center p-[5%] w-100">
+                                                  <div class="image-content-1 text-[36px] mb-[10px] font-bold">
+                                                      <h4>Apple Shopping Event</h4>
+                                                  </div>
+                                                  <div class="image-content-2 text-[#ffffffcc] text-[15px] mb-[10px]">
+                                                      <p>Shop great deals on MacBook,iPad,iPhone and more.</p>
+                                                  </div>
+                                                  <div class="image-content-3">
+                                                      <a href="#" class="btn btn-primary text-[15px]">Shop Now</a>
+                                                  </div>
+                                              </div>
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-shopping-event.jpg" class="d-block w-100" alt="...">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="image-content absolute text-white p-[5%] w-100">
+                                                  <div class="image-content-1 text-[36px] mb-[10px] font-bold">
+                                                      <h4>The new Google Pixel 7</h4>
+                                                  </div>
+                                                  <div class="image-content-2 text-[#ffffffcc] text-[15px] mb-[10px]">
+                                                      <p>Shop great deals on MacBook,iPad,iPhone and more.</p>
+                                                  </div>
+                                                  <div class="image-content-3">
+                                                      <a href="#" class="btn btn-primary text-[15px]">Pre-Order Now</a>
+                                                  </div>
+                                              </div>
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/pre-order-g-pixel-7.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                          <div class="carousel-item">
+                                            <div class="image-content absolute text-white p-[5%] w-100">
+                                                  <div class="image-content-1 text-[36px] mb-[10px] font-bold">
+                                                      <h4>Discount on all Smart appliances up to 25%</h4>
+                                                  </div>
+                                                  <div class="image-content-2 text-[#ffffffcc] text-[15px] mb-[10px]">
+                                                      <p>Shop great deals on MacBook,iPad,iPhone and more.</p>
+                                                  </div>
+                                                  <div class="image-content-3">
+                                                      <a href="#" class="btn btn-primary text-[15px]">Shop Now</a>
+                                                  </div>
+                                              </div>
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/discount-on-all-smart-appliances.jpg" class="d-block w-100" alt="...">
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>       
+                            </div>
+                            <div class="column-2 col-lg-6 col-md-6 col-sm-12">
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+            
         <div class="close-side"></div>
         <div class="shopping-cart">
             <div class="shopping-cart-heading">
@@ -570,5 +634,7 @@
                 </div>
             </div>
         </div>
+        <script src="/assets/Javascript/javascript.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

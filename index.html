@@ -8,6 +8,36 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/Style/style.css">
+    <script>
+        tailwind.config = {
+          theme: {
+            screens: {
+            'sm': '568px',
+            // => @media (min-width: 640px) { ... }
+
+            'md': '769px',
+            // => @media (min-width: 768px) { ... }
+
+            'lg': '1025px',
+            // => @media (min-width: 1024px) { ... }
+
+            'xl': '1280px',
+            // => @media (min-width: 1280px) { ... }
+
+            '2xl': '1440px',
+            // => @media (min-width: 1536px) { ... }
+        },
+            extend: {
+                screens: {
+                'xs': '320px',
+                // => @media (min-width: 320px) { ... }
+                '3xl': '1536px',
+                // => @media (min-width: 1536px) { ... }
+            },
+            }
+          }
+        }
+      </script>
 </head>
 <body>
         <div class="sticky-nav">
@@ -348,11 +378,223 @@
                 </li>
             </ul>
         </div>
-        <div class="website-wrapper ml-[60px]">
-            <header class="pt-[140px]">
+        <div class="mobile-nav">
+            <ul class="mobile-nav-headings">
+                <li class="nav-li">
+                    <a href="#">
+                        <span>Menu</span>
+                    </a>
+                </li>
+                <li class="nav-li li-2 active">
+                    <a href="#">
+                        <span>Categories</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="mobile-categories transition-transform duration-300 ease">
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Laptops-Tablets-PC.svg">
+                        <span class="text-gray-800 text-[14px]">Laptops, Tablets & PCs</span>
+                    </a>
+                    <ul class="categories-options">
+                        <li class="back-to-categories flex uppercase text-[13px]">
+                            <span class="arrow border-r-[1px] border-r-[rgba(0,0,0,0.105);]"><i class="fa-solid fa-chevron-left"></i></span>
+                            <a href="#">Back To Categories</a>
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Laptops</a>
+                            <span class="mobile-category-1-option-1 arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul class="categories-options options-options top-[0%]">
+                                <li class="back-to-laptop flex uppercase text-[13px]">
+                                    <span class="arrow border-r-[1px] border-r-[rgba(0,0,0,0.105);]"><i class="fa-solid fa-chevron-left"></i></span>
+                                    <a href="#">Back To Laptops, Tablets & PC</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Apple MacBook</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Business Laptop</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Gaming Laptop</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Ultrabook</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Tablets</a>
+                            <span class="mobile-category-1-option-2 arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul class="categories-options options-options top-[0%]">
+                                <li class="back-to-laptop flex uppercase text-[13px]">
+                                    <span class="arrow border-r-[1px] border-r-[rgba(0,0,0,0.105);]"><i class="fa-solid fa-chevron-left"></i></span>
+                                    <a href="#">Back To Laptops, Tablets & PC</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Apple iPad</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Android Tablets</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Windows Tablets</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">PCS</a>
+                            <span class="mobile-category-1-option-3 arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                            <ul class="categories-options options-options top-[0%]">
+                                <li class="back-to-laptop flex uppercase text-[13px]">
+                                    <span class="arrow border-r-[1px] border-r-[rgba(0,0,0,0.105);]"><i class="fa-solid fa-chevron-left"></i></span>
+                                    <a href="#">Back To Laptops, Tablets & PC</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Gaming PCS</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">Office PCS</a>
+                                </li>
+                                <li class="flex uppercase text-[13px]">
+                                    <a href="#">All in one</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <span class="mobile-category-1 arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Computer-Office.svg">
+                        <span class="text-gray-800 text-[14px]">Computer & Office</span>
+                    </a>
+                    <ul class="categories-options top-[0%]">
+                        <li class="back-to-categories flex uppercase text-[13px]">
+                            <span class="arrow border-r-[1px] border-r-[rgba(0,0,0,0.105);]"><i class="fa-solid fa-chevron-left"></i></span>
+                            <a href="#">Back To Categories</a>
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Monitors</a>
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Printers & Scanners</a>
+
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Input Devices</a>
+
+                        </li>
+                    </ul>
+                    <span class="mobile-category-2 arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Hardware-Components.svg">
+                        <span class="text-gray-800 text-[14px]">Hardware & Components</span>
+                    </a>
+                    <ul class="categories-options top-[0%]">
+                        <li class="back-to-categories flex uppercase text-[13px]">
+                            <span class="arrow border-r-[1px] border-r-[rgba(0,0,0,0.105);]"><i class="fa-solid fa-chevron-left"></i></span>
+                            <a href="#">Back To Categories</a>
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">PC Components</a>
+
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Cooling</a>
+
+                        </li>
+                        <li class="flex uppercase text-[13px]">
+                            <a href="#">Hardware & Other</a>
+
+                        </li>
+                    </ul>
+                    <span class="mobile-category-3 arrow"><i class="fa-solid fa-chevron-right"></i></span>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Smartphones.svg">
+                        <span class="text-gray-800 text-[14px]">Smartphones</span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Smartphones-1.svg">
+                        <span class="text-gray-800 text-[14px]">Games & Entertainment</span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/TV-HIFI.svg">
+                        <span class="text-gray-800 text-[14px]">TV & Hi-Fi</span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Photo-Video.svg">
+                        <span class="text-gray-800 text-[14px]">Photo & Video</span>
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="#">
+                        <img class="max-h-[18px] mr-[7px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Home-Appliance.svg">
+                        <span class="text-gray-800 text-[14px]">Home Appliance</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="mobile-categories active-categories">
+                <li>
+                    <a href="#">
+                        <span>Demo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Promotions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Stores</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Our Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Delivery & Return</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Outlet</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-regular fa-heart text-[14px] mr-[7px]"></i></span>
+                        <span>Wishlist</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa-solid fa-shuffle text-[14px] mr-[7px]"></i></span>
+                        <span>Compare</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="website-wrapper lg:ml-[60px]">
+            <header class="xs:pt-[120px] lg:pt-[140px]">
                 <div class="main-header absolute top-[0] left-[0]">
-                    <div class="container">
-                    <div class="general-header">
+                    <div id="custom-container" class="max-w-[1400px]">
+                        <div class="general-header lg:pl-[55px] 2xl:pl-[35px] 3xl:pl-[20px]">
                             <div class="logo">
                                 <a href="#">
                                     <img class="max-w-[200px] py-[5px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/mega-electronics-logo.svg">
@@ -383,10 +625,31 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="small-general-header flex h-[60px] w-[100%] justify-between">
+                            <div class="bars flex items-center ml-[5px] pt-[20px] ">
+                                <div class="h-[40px] w-[40px]">
+                                    <a href="#" class="hover:text-[rgba(51,51,51,.6)] px-[10px] h-[40px]">
+                                        <span><i class="fa-solid fa-bars text-[23px]"></i></span>
+                                    </a>
+                                </div>    
+                            </div>
+                            <div class="flex items-center">
+                                <a href="#">
+                                    <img class="max-w-[200px] py-[5px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/mega-electronics-logo.svg">
+                                </a>
+                            </div>
+                            <div class="users flex items-center pt-[20px]">
+                                <div class="h-[40px] w-[40px]">
+                                    <a href="#" class="hover:text-[rgba(51,51,51,.6)] px-[10px] h-[40px]">
+                                        <span><i class=" fa-regular fa-user text-[23px]"></i></span>
+                                    </a>
+                                </div>    
+                            </div>
+                        </div>
                     </div>
                     <div class="sub-header">
-                        <div class="container pr-[100px]">
-                            <div class="sub-header-content">
+                        <div class="custom-container">
+                            <div class="sub-header-content 3xl:pl-[20px] 2xl:pl-[30px] lg:pl-[50px]">
                                 <div class="all-categories">
                                     <a href="#" id="all-categories-btn" class="flex items-center justify-center bg-white rounded-[42px] h-[42px] px-[3px] text-decoration-none">
                                         <div class="bars-icon">
@@ -397,7 +660,7 @@
                                 </div>
                                 <div class="header-menu">
                                     <div class="menu">
-                                        <ul>
+                                        <ul class="lg:gap-[0] xl:gap-[5px]">
                                             <li>
                                                 <a class="links" href="#">
                                                     <span>Promotion</span>
@@ -419,81 +682,89 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="links" href="#">
+                                                <a class="links pr-[0]" href="#">
                                                     <span>Outlet</span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="menu-content">
-                                    <div class="content-1 h-[40px] px-[10px]">
-                                        <ul class="flex gap-[5px]">
-                                            <li class="hover-container">
-                                                <a class="content-1-link links" href="#">
-                                                    <span>USA</span>
-                                                    <span><i class="fa-solid fa-chevron-down text-[6px] relative bottom-[3px] left-[4px] text-[rgba(82,82,82,.45)]"></i></span>
-                                                </a>
-                                                <div class="usa-hover">
-                                                    <ul class="p-[20px] text-[#838383]">
-                                                        <li >
-                                                            <a class="flex text-[14px]" href="#">Deutschland</a>
-                                                        </li>
-                                                        <li >
-                                                            <a class="flex pt-[10px] text-[14px]" href="#">United Kindom</a>
-                                                        </li>
+                                <div class="flex 2xl:pr-[10px] xl:pr-[20px] lg:pr-[30px]">
+                                    <div class="menu-content">
+                                        <div class="content-1 h-[40px] px-[10px]">
+                                            <ul class="flex gap-[5px]">
+                                                <li class="hover-container">
+                                                    <a class="content-1-link links" href="#">
+                                                        <span>USA</span>
+                                                        <span><i class="fa-solid fa-chevron-down text-[6px] relative bottom-[3px] left-[4px] text-[rgba(82,82,82,.45)]"></i></span>
+                                                    </a>
+                                                    <div class="usa-hover">
+                                                        <ul class="p-[20px] text-[#838383]">
+                                                            <li >
+                                                                <a class="flex text-[14px]" href="#">Deutschland</a>
+                                                            </li>
+                                                            <li >
+                                                                <a class="flex pt-[10px] text-[14px]" href="#">United Kindom</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li class="hover-container">
+                                                    <a class="content-1-link links" href="#">
+                                                        <span>USD</span>
+                                                        <span><i class="fa-solid fa-chevron-down text-[6px] relative bottom-[3px] left-[4px] text-[rgba(82,82,82,.45)]"></i></span>
+                                                    </a>
+                                                    <div class="usa-hover">
+                                                        <ul class="p-[20px] text-[#838383]">
+                                                            <li >
+                                                                <a class="flex text-[14px]" href="#">EUR</a>
+                                                            </li>
+                                                            <li >
+                                                                <a class="flex pt-[10px] text-[14px]" href="#">GBP</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
                                                     </ul>
                                                 </div>
-                                            </li>
-                                            <li class="hover-container">
-                                                <a class="content-1-link links" href="#">
-                                                    <span>USD</span>
-                                                    <span><i class="fa-solid fa-chevron-down text-[6px] relative bottom-[3px] left-[4px] text-[rgba(82,82,82,.45)]"></i></span>
-                                                </a>
-                                                <div class="usa-hover">
-                                                    <ul class="p-[20px] text-[#838383]">
-                                                        <li >
-                                                            <a class="flex text-[14px]" href="#">EUR</a>
-                                                        </li>
-                                                        <li >
-                                                            <a class="flex pt-[10px] text-[14px]" href="#">GBP</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                                </ul>
-                                            </div>
-                                        </ul>
-                                </div>
-                                <div class="icons" id="sign-in-btn">
-                                <a href="#">
-                                <span><i class="fa-regular fa-user"></i></span>
-                                </a>
-                                </div>
-                                <div class="icons">
+                                            </ul>
+                                    </div>
+                                    <div class="icons" id="sign-in-btn">
                                     <a href="#">
-                                        <span><i class="fa-solid fa-shuffle"></i>
-                                            <span class="upper-icon">0</span>
-                                        </span>
-                                        
+                                    <span><i class="fa-regular fa-user"></i></span>
                                     </a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#">
+                                            <span><i class="fa-solid fa-shuffle"></i>
+                                                <span class="upper-icon">0</span>
+                                            </span>
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#">
+                                            <span><i class="fa-regular fa-heart"></i>
+                                                <span class="upper-icon">0</span>
+                                            </span>
+                                            
+                                        </a>
+                                    </div>
+                                    <div class="icons" id="shopping-cart-btn">
+                                        <a class="cart bg-primary group" href="#">
+                                            <span><i class="fa-solid fa-cart-shopping"></i>
+                                                <span class="upper-icon">0</span>
+                                            </span>
+                                            <span class="relative text-[14px] left-[10px] text-[black] pl-[5px] group-hover:text-[#838383]">$0.00</span>
+                                        </a>
+                                
+                                    </div>
                                 </div>
-                                <div class="icons">
-                                    <a href="#">
-                                        <span><i class="fa-regular fa-heart"></i>
-                                            <span class="upper-icon">0</span>
-                                        </span>
-                                        
-                                    </a>
-                                </div>
-                                <div class="icons" id="shopping-cart-btn">
-                                    <a class="cart bg-primary group" href="#">
-                                        <span><i class="fa-solid fa-cart-shopping"></i>
-                                            <span class="upper-icon">0</span>
-                                        </span>
-                                        <span class="relative text-[14px] left-[10px] text-[black] pl-[5px] group-hover:text-[#838383]">$0.00</span>
-                                    </a>
-                            
+                            </div>
+                            <div class="small-screen-sub-header-content">
+                                <div class="search-bar-div pt-[9px] w-100 ml-[0]">
+                                    <input class="search-bar h-[42px] w-[99%]" type="text" placeholder="Search for products">
+                                    <button type="submit" class="search-button fa-solid fa-magnifying-glass absolute h-[34px] w-[34px] right-[18px]"></button>
                                 </div>
                             </div>
                         </div>
@@ -501,11 +772,11 @@
                 </div>
 
             </header>
-            <div class="main-page bg-[rgb(246,246,246)] h-[5000px] container-fluid">
-                <div class="container h-[100%]">
-                    <div class="main-page-content h-[100%] w-[90%] ml-[55px] pt-[20px]">
-                        <div class="first-row-content flex gap-[15px]">
-                            <div class="column-1 col-lg-6 col-md-6 col-sm-12">
+            <div class="main-page bg-[rgb(246,246,246)] h-[5000px]">
+                <div class="custom-container h-[100%]">
+                    <div class="main-page-content h-[100%] pt-[20px]">
+                        <div class="first-row-content d-lg-flex gap-[15px]">
+                            <div class="column-1 xs:mb-[20px] lg:mb-[0]">
                                 <div class="slider">
                                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                         <div class="carousel-indicators bg-white w-[65px] h-[24px] items-center rounded-[20px]  left-[30%]">
@@ -516,7 +787,7 @@
                                         <div class="carousel-inner rounded-[10px]">
                                           <div class="carousel-item active">
                                               <div class="image-content absolute text-white text-center p-[5%] w-100">
-                                                  <div class="image-content-1 text-[36px] mb-[10px] font-bold">
+                                                  <div class="image-content-1 text-[35px] mb-[10px] font-bold">
                                                       <h4>Apple Shopping Event</h4>
                                                   </div>
                                                   <div class="image-content-2 text-[#ffffffcc] text-[15px] mb-[10px]">
@@ -526,11 +797,11 @@
                                                       <a href="#" class="btn btn-primary text-[15px]">Shop Now</a>
                                                   </div>
                                               </div>
-                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-shopping-event.jpg" class="d-block w-100 h-[460px]" alt="...">
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-shopping-event.jpg" class="object-cover w-100 h-[460px]">
                                         </div>
                                         <div class="carousel-item">
                                             <div class="image-content absolute text-white p-[5%] w-100">
-                                                  <div class="image-content-1 text-[36px] mb-[10px] font-bold">
+                                                  <div class="image-content-1 text-[35px] mb-[10px] font-bold">
                                                       <h4>The new Google Pixel 7</h4>
                                                   </div>
                                                   <div class="image-content-2 text-[#ffffffcc] text-[15px] mb-[10px]">
@@ -540,11 +811,11 @@
                                                       <a href="#" class="btn btn-primary text-[15px]">Pre-Order Now</a>
                                                   </div>
                                               </div>
-                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/pre-order-g-pixel-7.jpg" class="d-block w-100 h-[460px]" alt="...">
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/pre-order-g-pixel-7.jpg" class="object-cover w-100 h-[460px]">
                                           </div>
                                           <div class="carousel-item">
                                             <div class="image-content absolute text-white p-[5%] w-100">
-                                                  <div class="image-content-1 text-[36px] mb-[10px] font-bold">
+                                                  <div class="image-content-1 text-[35px] mb-[10px] font-bold">
                                                       <h4>Discount on all Smart appliances up to 25%</h4>
                                                   </div>
                                                   <div class="image-content-2 text-[#ffffffcc] text-[15px] mb-[10px]">
@@ -554,16 +825,16 @@
                                                       <a href="#" class="btn btn-primary text-[15px]">Shop Now</a>
                                                   </div>
                                               </div>
-                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/discount-on-all-smart-appliances.jpg" class="d-block w-100 h-[460px]" alt="...">
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/discount-on-all-smart-appliances.jpg" class="object-cover w-100 h-[460px]">
                                           </div>
                                         </div>
                                     </div>
                                 </div>       
                             </div>
-                            <div class="column-2 col-lg-6 col-md-6 col-sm-12">
+                            <div class="column-2 col-lg-6 col-md-12 col-sm-12">
                                 <div class="column-2-row-1">
                                     <div class="row-1-content">
-                                        <div class="w-[680px] h-[277px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
+                                        <div class=" h-[277px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
                                             <div class="text-[28px] text-white font-bold">
                                                 <h4>Aurora Headset</h4>
                                             </div>
@@ -591,11 +862,11 @@
                                                 <a href="#" class="btn btn-primary">Buy Now</a>
                                             </div>
                                         </div>
-                                        <img class="rounded-[10px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/02/logitech-aurora-headset.jpg">
+                                        <img class="rounded-[10px] w-100" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/02/logitech-aurora-headset.jpg">
                                     </div>
                                 </div>
-                                <div class="column-2-row-2 h-[160px] w-[680px] flex gap-[20px]">
-                                    <div class="row-1-content h-[100%] w-[50%]">
+                                <div class="column-2-row-2 h-[160px] sm:flex gap-[20px]">
+                                    <div class="row-1-content h-[100%] sm:w-[50%] xs:w-[100%]">
                                         <div class="h-[160px] w-[330px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
                                             <div class="text-[19px] text-white font-bold">
                                                 <h4>New Dual Sense</h4>
@@ -609,8 +880,8 @@
                                         </div>
                                         <img class="h-100 w-100 object-cover rounded-[10px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/new-dualsense.jpg">
                                     </div>
-                                    <div class="row-1-content h-[100%] w-[50%]">
-                                        <div class="h-[160px] w-[330px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
+                                    <div class="row-1-content h-[100%] sm:w-[50%] xs:w-[100%]">
+                                        <div class="h-[160px] max-w-[330px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
                                             <div class="text-[19px] text-white font-bold">
                                                 <h4>Instant Cameras</h4>
                                             </div>

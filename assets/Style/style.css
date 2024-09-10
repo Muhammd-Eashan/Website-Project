@@ -87,6 +87,120 @@
     transform: translateX(0);
     transition-delay: 0.1s;
 }
+.mobile-nav{
+    height: 100%;
+    width: 300px;
+    background-color: white;
+    position: fixed;
+    z-index: 500;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translate3d(-100%, 0, 0);
+    overflow: hidden;
+}
+.mobile-nav-opened{
+    transform: none;
+}
+.mobile-nav-headings{
+    width: 100%;
+    height: 52px;
+    display: flex;
+    flex-direction: row-reverse;
+    color: #909090;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.105) ;
+    background-color: rgba(0,0,0,0.04);
+    gap: 0.001px;
+}
+
+ .nav-li {
+  width: 50%;
+  color: #909090; 
+  text-transform: uppercase;
+  font-size: 13px;
+  position: relative;
+}
+
+.nav-li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-li a:hover {
+  color: #909090;
+}
+.nav-li::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(28, 97, 231);
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1)
+}
+.active{
+    background-color: rgba(0, 0, 0, 0.105);
+}
+.nav-li.active::after{
+    width: 100%;
+}
+.nav-li:hover::after{
+    width: 100%;
+}
+.li-2::after{
+    right: 0;
+    left: auto;
+}
+.mobile-categories a{
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    flex: 1 1 0%;
+    padding: 5px 20px;
+    color: #333;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.105);
+    animation: wd-fadeIn 1s ease;
+
+}
+.arrow{
+    width: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.105);
+    border-left: 1px solid rgba(0, 0, 0, 0.105);
+    font-size: 16px;
+    cursor: pointer;
+}
+.active-categories{
+    display: none;
+}
+@keyframes wd-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.categories-options{
+    position: absolute;    
+    left: 100%;
+    width: 100%;
+    background-color: white;
+    transition: transform .3s ease;
+    z-index: 2;
+}
+.categories-options-opened-1{
+    transform: translateX(-100%);
+}
+.categories-options-opened-2{
+    transform: translateX(-200%);
+}
 .close-side {
     width: 100%;
     height: 100%;
@@ -126,7 +240,6 @@
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 50px 0 80px;
     margin-left: 10px;
 }
 
@@ -147,7 +260,6 @@
     width: 97%;
     height: 46px;
     padding-left: 15px;
-    padding-right: 46px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 35px;
     color: #838383;
@@ -185,7 +297,6 @@
 }
 .sub-header-content{
     display: flex;
-    padding-left: 80px;
     height: 60px;
 }
 .all-categories {
@@ -219,12 +330,9 @@
 }
 .menu{
     flex: 1 1 auto;
-    padding-inline: 10px;
-    
 }
 .menu ul{
     display: flex;
-    gap: 5px;
     margin: 0;
 }
 .links{
@@ -265,6 +373,7 @@
     background-color: white;
     transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1),visibility 0.4s cubic-bezier(0.19, 1, 0.22, 1),transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateX(0) translateY(15px) translateZ(0);
+    z-index: 2;
 }
 .content-1-link:hover ~ .usa-hover, .usa-hover:hover {
     opacity: 1;
@@ -349,7 +458,7 @@
     content: "\f070";
 }
 .slider{
-    width: 675px;
+    max-width: 100%;
     height: 460px;
 }
 .indicators{
@@ -376,9 +485,9 @@
 .countdown-container {
     display: flex;
     gap: 5px;
-  }
+}
   
-  .countdown-item {
+.countdown-item {
     background-color: white;
     border-radius: 10px;
     padding: 5px;
@@ -386,16 +495,23 @@
     box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);
     min-width: 54px;
     min-height: 43px;
-  }
-  
-  .countdown-item span {
+}
+
+.countdown-item span {
     color: #333;
     font-size: 20px;
     font-weight: 500;
-  }
-  
-  .countdown-item p {
-    margin: 0;
-    font-size: 70%;
-    color: gray;
-  }
+}
+
+.countdown-item p {
+  margin: 0;
+  font-size: 70%;
+  color: gray;
+}
+.custom-container{
+    max-width: 1400px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

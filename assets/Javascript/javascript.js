@@ -105,6 +105,7 @@ function handleScreenResize() {
     const smallgeneralHeader = document.querySelector(".small-general-header")
     const generalHeader = document.querySelector(".general-header")
     const element = document.getElementById('custom-container');
+    const arrows = document.querySelectorAll('.arrow-scroll');
     
     // Check if the screen width is less than 1024px
     if (window.matchMedia("(max-width: 1024px)").matches) {
@@ -114,6 +115,9 @@ function handleScreenResize() {
         generalHeader.style.display = "none"
         stickyNav.style.display = "none"
         element.classList.remove("container")
+        arrows.forEach(function(scroll){
+            scroll.style.display = "block"
+        })
 
     } else {
         subHeaderContent.style.display = 'flex';
@@ -122,6 +126,9 @@ function handleScreenResize() {
         generalHeader.style.display = "flex"
         stickyNav.style.display = "block"
         element.classList.add("container")
+        arrows.forEach(function(scroll){
+            scroll.style.display = "none"
+        })
     }
 }
 
@@ -196,7 +203,7 @@ document.querySelectorAll(".mobile-nav .nav-li").forEach(function (item) {
   
   
 
-
+// MOBILE NAV CLICK FUNCTIONS
 
 
 document.querySelector(".mobile-category-1").addEventListener("click", function(){
@@ -241,3 +248,90 @@ document.querySelectorAll(".back-to-laptop").forEach(function(item) {
         })
     });
 });
+
+// MAKING THE SUBHEADER INTO STICKY SUBHEADER
+
+let lastScrollTop = 0; // To store the last scroll position
+
+window.addEventListener("scroll", function () {
+const subHeader = document.querySelector(".sub-header");
+const currentScrollTop = window.pageYOffset;
+const triggerPoint = 80; // Change this to the desired scroll position in pixels
+const subHeaderTop = subHeader.getBoundingClientRect().top + window.scrollY; // Get the top offset of the sub-header from the document top
+
+const scrollHeight = document.documentElement.scrollHeight;
+const scrolledToBottom = (window.innerHeight + window.scrollY) >= scrollHeight;
+
+
+// Check if the user has scrolled down past a certain point
+if (currentScrollTop > 600) { // Adjust 100 to the point after which you want to hide the header
+  if (currentScrollTop > lastScrollTop && !scrolledToBottom) {
+    // User is scrolling down
+    subHeader.classList.add('hide');
+  } else {
+    // User is scrolling up
+    subHeader.classList.remove('hide');
+  }
+}
+if (window.scrollY > triggerPoint) {
+    subHeader.style.position = "fixed";
+    
+  } else if (window.scrollY <= subHeaderTop) {
+    subHeader.style.position = "relative";
+};
+
+lastScrollTop = currentScrollTop; // Update the last scroll position
+});
+
+
+// BUTTONS OF SECOND ROW 
+
+let currentTranslateX = 0; // Initialize in the global scope
+
+document.getElementById("arrow-next").addEventListener("click", function() {
+    const container = document.querySelector(".second-row-content-items");
+    const containerWidth = container.scrollWidth; // Total width of the content
+    const visibleWidth = container.clientWidth; // Width of the visible area
+    
+    // Calculate the width of a single item based on the number of items that fit in the container
+    const items = container.children;
+    const itemWidth = items[0].offsetWidth; // Assuming all items are the same width
+    const numItemsVisible = Math.floor(visibleWidth / itemWidth);
+    const translateValue = numItemsVisible * itemWidth; // Amount to scroll per click
+
+    // Calculate maximum scrollable width
+    const maxTranslateX = -(containerWidth - visibleWidth);
+    
+    // Only accumulate if we haven't reached the end
+    if (currentTranslateX > maxTranslateX) {
+        currentTranslateX -= translateValue;
+        // Ensure currentTranslateX does not exceed the maximum value
+        currentTranslateX = Math.max(currentTranslateX, maxTranslateX);
+        container.style.transform = `translateX(${currentTranslateX}px)`;
+    }
+});
+
+document.getElementById("arrow-prev").addEventListener("click", function() {
+    const container = document.querySelector(".second-row-content-items");
+    const containerWidth = container.scrollWidth; // Total width of the content
+    const visibleWidth = container.clientWidth; // Width of the visible area
+    
+    // Calculate the width of a single item based on the number of items that fit in the container
+    const items = container.children;
+    const itemWidth = items[0].offsetWidth; // Assuming all items are the same width
+    const numItemsVisible = Math.floor(visibleWidth / itemWidth);
+    const translateValue = numItemsVisible * itemWidth; // Amount to scroll per click
+
+    // Only accumulate if we haven't reached the beginning
+    if (currentTranslateX < 0) {
+        currentTranslateX += translateValue;
+        // Ensure currentTranslateX does not go beyond the start
+        currentTranslateX = Math.min(currentTranslateX, 0);
+        container.style.transform = `translateX(${currentTranslateX}px)`;
+    }
+});
+
+
+
+
+

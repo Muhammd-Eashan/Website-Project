@@ -33,6 +33,8 @@
                 // => @media (min-width: 320px) { ... }
                 '3xl': '1536px',
                 // => @media (min-width: 1536px) { ... }
+                'mmd' : '993px'
+                // => @media (min-width: 992px) { ... }
             },
             }
           }
@@ -775,7 +777,7 @@
             <div class="main-page bg-[rgb(246,246,246)] h-[5000px]">
                 <div class="custom-container h-[100%]">
                     <div class="main-page-content h-[100%] pt-[20px]">
-                        <div class="first-row-content d-lg-flex gap-[15px]">
+                        <div class="first-row-content mb-[90px] d-lg-flex gap-[15px]">
                             <div class="column-1 xs:mb-[20px] lg:mb-[0]">
                                 <div class="slider">
                                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -897,8 +899,97 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="second-row mb-[30px] w-100 max-h-[360px] xs:mt-[220px] sm:mt-[0px]">
+                            <div class="heading mb-[20px] text-[26px] font-bold">
+                                <h4>Popular Categories</h4>
+                            </div>
+                            <div class="second-row-content flex overflow-hidden lg:gap-[20px] md:gap-[50px] relative md:left-[20px] lg:left-[0] py-[15px] h-100 max-h-[270px]">
+                                <div class="second-row-content-items flex h-100 w-100 transition-transform ease lg:gap-[20px] md:gap-[50px]" >
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/5)] xs:w-[calc(100%/2)]">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/mobile-phones-apple-iphone.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Apple iPhone</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/5)] xs:w-[calc(100%/2)] ">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/Laptops-1.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Apple MacBook</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/5)] xs:w-[calc(100%/2)] ">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/motherboards.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Motherboards</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/5)] xs:w-[calc(100%/2)] ">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/photo-and-video-cameras-mirrorless-cameras.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Mirrorless</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/5)] xs:w-[calc(100%/2)] ">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/headsets.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Headsets</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/5)] xs:w-[calc(100%/2)] ">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/drones.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Drones</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="item flex-shrink-0 lg:w-[calc(100%/7.7)] md:w-[calc(100%/4.2)] xs:w-[calc(100%/2)] ">
+                                        <a href="#" class="hover:text-[#333] group">
+                                            <div class="overflow-hidden rounded-[10px]">
+                                                <img class="rounded-[10px] xs:max-w-[180px] xs:ml-[auto] xs:mr-[auto] md:max-w-[100%] group-hover:[transform:scale3d(1.1,1.1,1)] transition-transform duration-500 ease-[cubic-bezier(0,0,0.44,1.18)]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/Apple-Ipad.jpg">
+                                            </div>
+                                            <div class="p-[10px] text-center">
+                                                <div><h3 class="text-[18px] font-bold">Apple iPad</h3></div>
+                                                <div><span class="text-[#838383]">8 products</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>    
+                            </div>
+                            
+                            <div id="arrow-next" class="arrow-scroll cursor-pointer absolute mmd:top-[108%] sm:top-[163%] xs:top-[180%] right-[0]"><i class="fa-solid fa-chevron-right"></i></div>
+                            <div id="arrow-prev" class="arrow-scroll cursor-pointer absolute mmd:top-[108%] sm:top-[163%] xs:top-[180%] right-[99%]"><i class="fa-solid fa-chevron-left"></i></div>
+
+                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

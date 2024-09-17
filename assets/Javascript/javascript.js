@@ -264,7 +264,7 @@ const scrolledToBottom = (window.innerHeight + window.scrollY) >= scrollHeight;
 
 
 // Check if the user has scrolled down past a certain point
-if (currentScrollTop > 600) { // Adjust 100 to the point after which you want to hide the header
+if (currentScrollTop > 680) { // Adjust 100 to the point after which you want to hide the header
   if (currentScrollTop > lastScrollTop && !scrolledToBottom) {
     // User is scrolling down
     subHeader.classList.add('hide');
@@ -287,51 +287,64 @@ lastScrollTop = currentScrollTop; // Update the last scroll position
 // BUTTONS OF SECOND ROW 
 
 let currentTranslateX = 0; // Initialize in the global scope
+let lastMoveWasPartial = false; // Track if the last move was a partial move
 
 document.getElementById("arrow-next").addEventListener("click", function() {
     const container = document.querySelector(".second-row-content-items");
     const containerWidth = container.scrollWidth; // Total width of the content
     const visibleWidth = container.clientWidth; // Width of the visible area
-    
-    // Calculate the width of a single item based on the number of items that fit in the container
     const items = container.children;
     const itemWidth = items[0].offsetWidth; // Assuming all items are the same width
-    const numItemsVisible = Math.floor(visibleWidth / itemWidth);
-    const translateValue = numItemsVisible * itemWidth; // Amount to scroll per click
+    const totalItems = items.length;
+    
+    let itemsToMove;
+    if (window.innerWidth >= 768) {
+        itemsToMove = 4; // Move 4 items on larger screens
+    } else {
+        itemsToMove = 2; // Move 2 items on smaller screens
+    }
 
     // Calculate maximum scrollable width
     const maxTranslateX = -(containerWidth - visibleWidth);
     
-    // Only accumulate if we haven't reached the end
-    if (currentTranslateX > maxTranslateX) {
-        currentTranslateX -= translateValue;
-        // Ensure currentTranslateX does not exceed the maximum value
-        currentTranslateX = Math.max(currentTranslateX, maxTranslateX);
-        container.style.transform = `translateX(${currentTranslateX}px)`;
+    // Calculate remaining items
+    const remainingItems = Math.ceil((containerWidth + currentTranslateX - visibleWidth) / itemWidth);
+
+    // If the remaining items are fewer than the normal move, only move those remaining items
+    if (remainingItems <= itemsToMove) {
+        currentTranslateX -= remainingItems * itemWidth; // Move only remaining items
+        lastMoveWasPartial = true; // Indicate the last move was a partial move
+    } else {
+        currentTranslateX -= itemsToMove * itemWidth; // Move normally
+        lastMoveWasPartial = false; // Reset since this was a normal move
     }
+
+    // Ensure currentTranslateX does not exceed the maximum value
+    currentTranslateX = Math.max(currentTranslateX, maxTranslateX);
+    container.style.transform = `translateX(${currentTranslateX}px)`;
 });
 
 document.getElementById("arrow-prev").addEventListener("click", function() {
     const container = document.querySelector(".second-row-content-items");
-    const containerWidth = container.scrollWidth; // Total width of the content
-    const visibleWidth = container.clientWidth; // Width of the visible area
-    
-    // Calculate the width of a single item based on the number of items that fit in the container
     const items = container.children;
-    const itemWidth = items[0].offsetWidth; // Assuming all items are the same width
-    const numItemsVisible = Math.floor(visibleWidth / itemWidth);
-    const translateValue = numItemsVisible * itemWidth; // Amount to scroll per click
-
-    // Only accumulate if we haven't reached the beginning
-    if (currentTranslateX < 0) {
-        currentTranslateX += translateValue;
-        // Ensure currentTranslateX does not go beyond the start
-        currentTranslateX = Math.min(currentTranslateX, 0);
-        container.style.transform = `translateX(${currentTranslateX}px)`;
+    const itemWidth = items[0].offsetWidth;
+    
+    let itemsToMove;
+    if (window.innerWidth >= 768) {
+        itemsToMove = 4; // Move 4 items on larger screens
+    } else {
+        itemsToMove = 2; // Move 2 items on smaller screens
     }
+
+    // If the last move was partial, move only 1 item
+    if (window.innerWidth < 768 && lastMoveWasPartial) {
+        currentTranslateX += itemWidth; // Move only 1 item back
+        lastMoveWasPartial = false; // Reset since we handled the partial move
+    } else {
+        currentTranslateX += itemsToMove * itemWidth; // Move normally
+    }
+
+    // Ensure currentTranslateX does not go beyond the start
+    currentTranslateX = Math.min(currentTranslateX, 0);
+    container.style.transform = `translateX(${currentTranslateX}px)`;
 });
-
-
-
-
-

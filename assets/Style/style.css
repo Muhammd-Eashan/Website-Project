@@ -294,7 +294,7 @@
     background-color: rgba(230, 239, 253, 1);
     width: 100%;
     height: 60px;
-    z-index: 3;
+    z-index: 2;
     transition: transform 0.3s ease;
 }
 .sub-header.hide {
@@ -415,7 +415,7 @@
 }
 .upper-icon{
     position: absolute;
-    top: 60%;
+    top: 10%;
     font-size: 13px;
     width: 18px;
     height: 18px;
@@ -519,4 +519,85 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+.box:hover .box-menu{
+    opacity: 1;
+    visibility: visible !important;
+    transform: none;
+}
+.box-btn{
+    height: 42px;
+    width: 100%;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(28, 97, 231);
+    font-weight: 600;
+    transition: color .25s ease, background-color .25s ease, border-color .25s ease, box-shadow .25s ease, opacity .25s ease;
+}
+.box-btn::before{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: opacity .15s ease, transform .25s ease;
+    transform: translateY(100%);
+    content: "\f07a";
+    font-family: "FontAwesome";
+    color: white;
+}
+.box-btn:hover span{
+    transform: translateY(-100%);
+}
+.box-btn:hover::before{
+    transform: translateY(0);
+}
+.box-detail table tr{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 5px;
+}
+.box-detail table td{
+    color: #a5a5a5;
+}
+.box:hover .box-hover,.box:hover .box-detail, .box:hover,.box:hover .box-dots,.box:hover .blocks{
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1.01);
+    transition: opacity .3s ease, visibility .0s ease, transform .3s ease;
+}
+.left-right-btns{
+    display: none !important;
+}
+.shopping-ul::-webkit-scrollbar, .macbook-options::-webkit-scrollbar{
+    width: 5px;    
+}
+
+.shopping-ul::-webkit-scrollbar-track, .macbook-options::-webkit-scrollbar-track{
+    background: rgba(0, 0, 0, 0.05);      
+}
+.shopping-ul::-webkit-scrollbar-thumb, .macbook-options::-webkit-scrollbar-thumb{
+    background: rgba(0, 0, 0, 0.12);         
+}
+
+.btn-border-active{
+    border: 1px solid #767676 !important;
+}
+
+.btn-border-remove{
+    border: none;
+}
+.btn-remove{
+    color: #767676 !important;
+    cursor: default !important;
+    pointer-events: none !important;
 }

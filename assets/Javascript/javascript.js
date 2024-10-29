@@ -38,6 +38,7 @@ closeSide.addEventListener('click', function(event) {
 });
 document.getElementById("close-btn").addEventListener('click', function(event) {
     collapseShoppingbar()
+    event.preventDefault();
 });
 
 // SIGN IN BUTTON
@@ -486,6 +487,288 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+// SELECT OPTIONS FUCTIONS
+
+document.querySelector('.select-options-btn').addEventListener('click', function(){
+    
+    event.preventDefault();
+    
+    document.querySelector('.macbook-options').style.transform = 'none';
+    document.querySelector('.select-options-btn').style.pointerEvents = 'none';
+    document.querySelector('.select-options-btn').style.opacity = '0.3'
+});
+
+document.querySelector('.close-macbook-options').addEventListener('click', function(){
+    
+    document.querySelector('.macbook-options').style.transform = 'translateY(103%)';
+    document.querySelector('.select-options-btn').style.pointerEvents = 'auto';
+    document.querySelector('.select-options-btn').style.opacity = '1'
+
+});
+
+
+function handleActiveButtons(buttonClass) {
+    document.querySelectorAll(buttonClass).forEach(btn => {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll(buttonClass).forEach(b => b.classList.remove('btn-border-active'));
+            btn.classList.add('btn-border-active');
+        });
+    });
+}
+
+
+// Apply active border functionality to all button types
+handleActiveButtons('.silver-btns');
+handleActiveButtons('.macbook-processor');
+handleActiveButtons('.macbook-ram');
+handleActiveButtons('.macbook-storage');
+
+
+let isFirstSelection = true; 
+let selectedCategory = '';   
+let selectedProcessorIndex = null; 
+let selectedRamIndex = null;
+let selectedStorageIndex = null;
+let selectedColorIndex = null;
+
+let selectedColor = null;
+let selectedProcessor = null;
+let selectedRam = null;
+let selectedStorage = null;
+
+
+
+function processorFunction(processors) {
+    document.querySelectorAll('.macbook-processor').forEach((processor, idx) => {
+        processor.classList.toggle('btn-remove', !processors.includes(idx));
+        processor.classList.toggle('btn-border-remove', !processors.includes(idx));
+    });
+}
+
+function ramFunction(rams) {
+    document.querySelectorAll('.macbook-ram').forEach((ram, idx) => {
+        ram.classList.toggle('btn-remove', !rams.includes(idx));
+        ram.classList.toggle('btn-border-remove', !rams.includes(idx));
+    });
+}
+
+function storageFunction(storages) {
+    document.querySelectorAll('.macbook-storage').forEach((storage, idx) => {
+        storage.classList.toggle('btn-remove', !storages.includes(idx));
+        storage.classList.toggle('btn-border-remove', !storages.includes(idx));
+    });
+}
+
+
+function wholeProcessorRamStorageFunction(processors, rams, storages) {
+    processorFunction(processors);
+    ramFunction(rams);
+    storageFunction(storages);
+}
+
+function checkAllSelectionsMade() {
+    
+    if (
+        selectedProcessorIndex !== null &&
+        selectedRamIndex !== null &&
+        selectedStorageIndex !== null &&
+        selectedColorIndex !== null
+    ) {
+        document.querySelector('.clear-button').classList.remove('left-right-btns'); 
+        document.querySelector('.select-options-price').classList.remove('left-right-btns');
+    }
+}
+
+
+function updateVisibility(type, index) {
+    const visibilityMap = {
+        'processor': [
+            [[0], [0], [0]],   
+            [[1], [0], [1]],  
+            [[2], [1], [2]]   
+        ],
+        'ram': [
+            [[0, 1], [0], [0, 1]],  // RAM 0 (default visibility)
+            [[2], [1], [2]],        // RAM 1 (after Processor 2 or Storage 2)
+            [[1], [0], [1]],        // RAM 0 (after Processor 1 or Storage 1)
+            [[0], [0], [0]]         // RAM 0 (after Processor 0 or Storage 0)
+        ],
+        'storage': [
+            [[0], [0], [0]],        
+            [[1], [0], [1]],        
+            [[2], [1], [2]]         
+        ]
+    };
+
+
+    if (isFirstSelection && (selectedCategory === '' || selectedCategory === type)) {
+        selectedCategory = type; 
+
+       
+        document.querySelectorAll(`.macbook-${type}`).forEach(btn => {
+            btn.classList.remove('btn-remove', 'btn-border-remove'); 
+        });
+
+        const [processors, rams, storages] = visibilityMap[type][index];
+
+        
+        if (type === 'processor') {
+            selectedProcessorIndex = index; 
+            ramFunction(rams);
+            storageFunction(storages);
+        } else if (type === 'ram') {
+            selectedRamIndex = index;
+            processorFunction(processors);
+            storageFunction(storages);
+        } else if (type === 'storage') {
+            selectedStorageIndex = index; 
+            processorFunction(processors);
+            ramFunction(rams);
+        }
+        
+        checkAllSelectionsMade();
+
+        return; 
+    }
+
+    
+    if (type === 'ram') {
+        let ramVisibility;
+        selectedRamIndex = index;
+        if (selectedProcessorIndex === 0 || selectedStorageIndex === 0) {
+            ramVisibility = visibilityMap['ram'][3]; // Show this: [[0], [0], [0]]
+        } else if (selectedProcessorIndex === 1 || selectedStorageIndex === 1) {
+            ramVisibility = visibilityMap['ram'][2]; // Show this: [[1], [0], [1]]
+        } else if (selectedProcessorIndex === 2 || selectedStorageIndex === 2) {
+            ramVisibility = visibilityMap['ram'][1]; // Show this: [[2], [1], [2]] for RAM 1
+        } else {
+            ramVisibility = visibilityMap['ram'][0]; // Default: [[0, 1], [0], [0, 1]]
+        }
+
+        const [processors, rams, storages] = ramVisibility;
+
+        wholeProcessorRamStorageFunction(processors, rams, storages);
+
+        isFirstSelection = false;
+        checkAllSelectionsMade();
+        return;
+    }
+
+   
+    const [processors, rams, storages] = visibilityMap[type][index];
+
+    wholeProcessorRamStorageFunction(processors, rams, storages);
+
+    isFirstSelection = false;
+
+     
+    
+    if (type === 'processor') {
+        selectedProcessorIndex = index;
+    } else if (type === 'ram') {
+        selectedRamIndex = index;
+    } else if (type === 'storage') {
+        selectedStorageIndex = index;
+    } 
+    checkAllSelectionsMade();
+    updatePrice();
+    
+};
+
+
+
+
+// Clear Select Options
+
+document.querySelector('.clear-button').addEventListener('click', function(){
+    isFirstSelection = true;
+    selectedCategory = '';
+    selectedProcessorIndex = null;
+    selectedStorageIndex = null;
+    selectedColorIndex = null;
+    selectedColor = null;
+    selectedRam = null;
+    selectedProcessor = null;
+    selectedStorage = null;
+
+    document.querySelectorAll('.macbook-processor').forEach(processor => {
+        processor.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
+    });
+
+    document.querySelectorAll('.macbook-ram').forEach(ram => {
+        ram.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
+    });
+
+    document.querySelectorAll('.macbook-storage').forEach(storage => {
+        storage.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
+    });
+
+    document.querySelectorAll('.silver-btns').forEach(btns => {
+        btns.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
+    });
+
+    document.querySelector('.clear-button').classList.add('left-right-btns');
+    document.querySelector('.select-options-price').classList.add('left-right-btns');    
+});
+
+function updatePrice() {
+    if (
+        selectedColorIndex !== null &&
+        selectedProcessorIndex !== null &&
+        selectedRamIndex !== null &&
+        selectedStorageIndex !== null
+    ) {
+        let finalPrice = 2499;  
+
+        if (selectedProcessorIndex === 1 && selectedRamIndex === 0 && selectedStorageIndex === 1) {
+            finalPrice = 2699;
+        } else if (selectedProcessorIndex === 2 && selectedRamIndex === 1 && selectedStorageIndex === 2) {
+            finalPrice = 2999;
+        }
+
+        document.querySelector('.select-options-price').innerHTML = `$${finalPrice.toLocaleString()}.00`;
+    }
+}
+
+
+
+// Event listeners for Color, Processor, RAM, and Storage buttons
+document.querySelectorAll('.silver-btns').forEach((button, btn_index) => {
+    button.addEventListener('click', function() {
+        selectedColorIndex = btn_index; 
+        selectedColor = colorOptions[selectedColorIndex];
+        checkAllSelectionsMade();
+        updatePrice();
+    });
+});
+
+
+
+document.querySelectorAll('.macbook-processor').forEach((button, index) => {
+    button.addEventListener('click', function() {
+        updateVisibility('processor', index);
+        selectedProcessor = processorOptions[selectedProcessorIndex];
+    
+        
+    });
+});
+
+
+document.querySelectorAll('.macbook-ram').forEach((button, index) => {
+    button.addEventListener('click', function() {
+        updateVisibility('ram', index); 
+        selectedRam = ramOptions[selectedRamIndex];
+    });    
+});
+
+
+document.querySelectorAll('.macbook-storage').forEach((button, index) => {
+    button.addEventListener('click', function() {
+        updateVisibility('storage', index);
+        selectedStorage = storageOptions[selectedStorageIndex];
+    });
+});
+
 
 // ADD TO CART FUNCTION
 
@@ -497,12 +780,48 @@ let basket = JSON.parse(localStorage.getItem('data')) || [];
 
 basket = basket.filter(item => item !== null);
 
+function isSameItem(item) {
+    return (
+      item.colorIndex === selectedColorIndex &&
+      item.processorIndex === selectedProcessorIndex &&
+      item.ramIndex === selectedRamIndex &&
+      item.storageIndex === selectedStorageIndex
+    );
+}
+
+function changeItemIds(baseId) {
+    let counter = 1; 
+    basket.forEach(item => {
+
+        if (item.id === baseId || item.id.toString().startsWith(`${baseId}-`) && !isSameItem(item)) {
+            item.id = `${baseId}-${counter}`;
+            counter++;
+        }
+    });
+}
+
+
 function add_to_cart(id) {
+
     
     const product = products.find(item => Number(item.id) === Number(id));
     
-    const basketIndex = basket.findIndex(item => Number(item.id) === Number(id));
+    const basketIndex = basket.findIndex(item =>{
+        if (product.id === 1) {
+            return isSameItem(item);
+        } 
+        return Number(item.id) === Number(id);
+        });
+    const requiresSelection = (product.id === 1)
     
+    if (requiresSelection) {
+        if (!selectedColor || !selectedProcessor || !selectedRam || !selectedStorage) {
+            alert("Please select some product options before adding this product to your cart.");
+            return; // Stop further execution if any selection is missing
+        }
+    }    
+
+
     if (basketIndex < 0) {
         
         basket.push({
@@ -511,8 +830,22 @@ function add_to_cart(id) {
             sku: product.sku,
             img: product.img,
             price: product.discountedprice,
-            quantity: 1
+            quantity: 1,
+            ...(requiresSelection && {
+            color : selectedColor.name,
+            processor: selectedProcessor.name,
+            ram : selectedRam.name,
+            storage : selectedStorage.name,
+            processorIndex: selectedProcessorIndex,
+            ramIndex: selectedRamIndex,
+            storageIndex: selectedStorageIndex,
+            colorIndex: selectedColorIndex
+            })
         });
+        if(product.id === 1){
+            changeItemIds(1)
+        }
+        
     } else {
         basket[basketIndex].quantity += 1;
     }
@@ -521,9 +854,16 @@ function add_to_cart(id) {
     
     closeSide.classList.toggle('seen');
 
+   
+    document.querySelector('.macbook-options').style.transform = 'translateY(103%)';
+
+    document.querySelector('.select-options-btn').style.pointerEvents = 'auto';
+
+    document.querySelector('.select-options-btn').style.opacity = '1'
+
     addToMemory();
     
-    event.preventDefault(); // Prevent the default action (jumping to the top of the page)
+    event.preventDefault(); 
     
     generateCartItems();
     
@@ -531,13 +871,19 @@ function add_to_cart(id) {
 }
 
 function calculate() {
-    
+    let totalPrice = basket.reduce((total, item) => total + (item.quantity * item.price), 0);
+
     let cartIcon = document.getElementById('shopping-cart-icon');
-    
-    let cartAmount = basket.reduce((total, item) => total + (item ? item.quantity : 0), 0); // Calculate total quantity, avoiding null
-    
+
+    let cartAmount = basket.reduce((total, item) => total + (item ? item.quantity : 0), 0); 
+
     cartIcon.innerHTML = cartAmount;
+
+    document.querySelectorAll(".total-price").forEach(element =>{
+    element.innerHTML = "$" + totalPrice.toLocaleString() + ".00"; 
+    });    
 }
+
 
 function generateCartItems() {
     if (basket.length > 0) {
@@ -564,8 +910,24 @@ function generateCartItems() {
             
             cartItem.setAttribute('data-id', item.id);
 
-            if (item.id === 1) {
+           
 
+            
+            if (item.id === 1 || item.id.toLocaleString().match(/^1-\d+$/)) {
+
+                if (item.colorIndex === 1) {
+                    item.img = "https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-macbook-pro-16-space-gray-1.jpg"
+                } else {
+                    item.img = "https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-macbook-pro-16-silver-1.jpg"
+                }
+                if (item.processorIndex === 1 && item.ramIndex === 0 && item.storageIndex === 1) {
+                    item.price = 2699
+                }else if (item.processorIndex === 2 && item.ramIndex === 1 && item.storageIndex === 2){
+                    item.price = 2999
+                }else{
+                    item.price = 2499
+                }
+                
                 cartItem.innerHTML = `            
                 <a href= "#" class="absolute inset-0"></a>
                 <a href= "#" class="absolute w-[20px] h-[20px] text-[#333] text-center leading-[20px] top-[13px] right-[10px] mb-[8px] hover:text-[#333]" onclick="event.preventDefault()"><i class="fa-solid fa-xmark"></i></a>
@@ -578,15 +940,32 @@ function generateCartItems() {
                         <span class="font-bold">SKU:</span>
                         <span class="text-[#777]">${item.sku}</span>
                     </div>
-                    <div>this item is apple macbook </div>
+                    <ul class="text-[13.5px]" >
+                    <li class="mb-[5px]">
+                        <span class="text-[#333] font-bold">Color:</span>
+                        <span class="text-[#777]">${item.color}</span>
+                    </li>
+                    <li class="mb-[5px]">
+                        <span class="text-[#333] font-bold">Processor:</span>
+                        <span class="text-[#777]">${item.processor}</span>
+                    </li>
+                    <li class="mb-[5px]">
+                        <span class="text-[#333] font-bold">RAM:</span>
+                        <span class="text-[#777]">${item.ram}</span>
+                    </li>
+                    <li class="mb-[5px]">
+                        <span class="text-[#333] font-bold">Storage:</span>
+                        <span class="text-[#777]">${item.storage}</span>
+                    </li>
+                    </ul>
                     <div class="inline-flex text-[#777] mb-[8px] relative z-[1]">
                         <input type="button" value="-" class="minus h-[32px] w-[25px] px-[5px] border rounded-bl-[5px] rounded-tl-[5px] hover:bg-[rgb(28,97,231)] hover:text-white transition duration-300">
-                        <span class="h-[32px] w-[30px] border text-center leading-[32px] text-[14px]">${item.quantity}</span>
+                        <span class="quantity h-[32px] w-[30px] border text-center leading-[32px] text-[14px]">${item.quantity}</span>
                         <input type="button" value="+" class="plus h-[32px] w-[25px] px-[5px] border rounded-br-[5px] rounded-tr-[5px] hover:bg-[rgb(28,97,231)] hover:text-white transition duration-300">
                     </div>
                     <div class="text-[13.5px] text-[#777]">
-                        <span class="inline-block w-[22px]">${item.quantity} ×</span>
-                        <span class="text-[rgb(28,97,231)]">$${item.price}.00</span>
+                        <span class="quantity-x w-[22px]">${item.quantity} ×</span>
+                        <span class="text-[rgb(28,97,231)]">$${item.price.toLocaleString()}.00</span>
                     </div>    
                 </div>
             `;
@@ -607,12 +986,12 @@ function generateCartItems() {
                         </div>
                         <div class="inline-flex text-[#777] mb-[8px] relative z-[1]">
                             <input type="button" value="-" class="minus h-[32px] w-[25px] px-[5px] border rounded-bl-[5px] rounded-tl-[5px] hover:bg-[rgb(28,97,231)] hover:text-white transition duration-300">
-                            <span class="h-[32px] w-[30px] border text-center leading-[32px] text-[14px]">${item.quantity}</span>
+                            <span class="quantity h-[32px] w-[30px] border text-center leading-[32px] text-[14px]">${item.quantity}</span>
                             <input type="button" value="+" class="plus h-[32px] w-[25px] px-[5px] border rounded-br-[5px] rounded-tr-[5px] hover:bg-[rgb(28,97,231)] hover:text-white transition duration-300">
                         </div>
                         <div class="text-[13.5px] text-[#777]">
-                            <span class="inline-block w-[22px]">${item.quantity} ×</span>
-                            <span class="text-[rgb(28,97,231)]">$${item.price}.00</span>
+                            <span class="quantity-x w-[22px]">${item.quantity} ×</span>
+                            <span class="text-[rgb(28,97,231)]">$${item.price.toLocaleString()}.00</span>
                         </div>    
                     </div>
                 `;
@@ -632,7 +1011,7 @@ function generateCartItems() {
         shoppingCartFooter.innerHTML = `
             <p class="p-[15px] flex justify-between text-[19.5px]">
                 <strong class="text-[#242424]">Subtotal:</strong>
-                <span class="text-[#1C61E7] relative bottom-[2px]">${netTotalPrice}</span>
+                <span class="total-price text-[#1C61E7] relative bottom-[2px]">${netTotalPrice}</span>
             </p>
             <div class="p-[15px]">
                 <div class="progress-msg text-left text-[15px] text-[#777777] font-bold"> Add <span class="text-[#1C61E7] amount-left"></span> to cart and get free shipping!</div>
@@ -678,39 +1057,45 @@ const changeQuantity = (product_id, type) => {
     let positionItemInCart = basket.findIndex(value => value.id == product_id);
     
     if (positionItemInCart >= 0) {
+        const cartItem = document.querySelector(`[data-id='${product_id}']`); 
+        
         if (type === 'plus') {
             basket[positionItemInCart].quantity += 1;
-        
         } else {
             if (basket[positionItemInCart].quantity > 1) {
-                
                 basket[positionItemInCart].quantity -= 1;
-            
             } else {
                 basket.splice(positionItemInCart, 1);
+                // Remove the item from the UI
+                cartItem.remove(); 
             }
         }
+        
+        if (basket[positionItemInCart]) {
+            cartItem.querySelector('.quantity').innerHTML = basket[positionItemInCart].quantity;
+            cartItem.querySelector('.quantity-x').innerHTML = basket[positionItemInCart].quantity + " ×";
+        }
+        
+        
+        let totalPrice = basket.reduce((total, item) => total + (item.quantity * item.price), 0);
         addToMemory();
-        
-        generateCartItems();
-        
-        calculate();    
+        calculate(); 
+        updateProgress(totalPrice);  
     }
 };
-
 
 document.querySelector('.rest-of-shopping-cart').addEventListener('click', (event) => {
     if (event.target.classList.contains('fa-xmark')) {
         const cartItem = event.target.closest('li');
         
-        const product_id = parseInt(cartItem.dataset.id);  
+        const product_id = cartItem.dataset.id;  
         
         cancelItem(product_id);
     }
 });
 
 function cancelItem(product_id) {
-    const itemIndex = basket.findIndex(item => item.id === product_id);  
+    const itemIndex = basket.findIndex(item => item.id.toString() === product_id);  
     
     basket.splice(itemIndex, 1);  
     
@@ -734,12 +1119,14 @@ function updateProgress(totalPrice) {
 
     let progressPercentage = Math.min((totalPrice / goalAmount * 100),100);
 
-    document.querySelector('.amount-left').innerHTML= "$" + remainingAmount.toLocaleString();
-
     document.querySelector('.progress-bar').style.width = progressPercentage + '%';
 
     if (totalPrice >= goalAmount) {
         document.querySelector('.progress-msg').innerHTML ="Your order qualifies for free shipping!"
+    }else{
+        document.querySelector('.progress-msg').innerHTML ="Add <span class='text-[#1C61E7] amount-left'></span> to cart and get free shipping!"
+
+        document.querySelector('.amount-left').innerHTML= "$" + remainingAmount.toLocaleString();
     }
 }
 
@@ -756,225 +1143,3 @@ function returnToShop(){
 
 generateCartItems();
 calculate();
-
-
-
-// SELECT OPTIONS FUCTIONS
-
-document.querySelector('.select-options-btn').addEventListener('click', function(){
-    
-    event.preventDefault();
-    
-    document.querySelector('.macbook-options').style.transform = 'none';
-});
-
-document.querySelector('.close-macbook-options').addEventListener('click', function(){
-    
-    document.querySelector('.macbook-options').style.transform = 'translateY(103%)';
-
-});
-
-
-function handleActiveButtons(buttonClass) {
-    document.querySelectorAll(buttonClass).forEach(btn => {
-        btn.addEventListener('click', function () {
-            document.querySelectorAll(buttonClass).forEach(b => b.classList.remove('btn-border-active'));
-            btn.classList.add('btn-border-active');
-        });
-    });
-}
-
-
-// Apply active border functionality to all button types
-handleActiveButtons('.silver-btns');
-handleActiveButtons('.macbook-processor');
-handleActiveButtons('.macbook-ram');
-handleActiveButtons('.macbook-storage');
-
-
-let isFirstSelection = true; 
-let selectedCategory = '';   
-let selectedProcessorIndex = null; 
-let selectedRamIndex = null;
-let selectedStorageIndex = null;   
-let hasProcessorSelected = false; // Track if a processor is selected
-let hasRamSelected = false;        // Track if RAM is selected
-let hasStorageSelected = false;    // Track if storage is selected
-
-
-// Event listeners for Processor, RAM, and Storage buttons
-document.querySelectorAll('.macbook-processor').forEach((processor, index) => {
-    processor.addEventListener('click', () => updateVisibility('processor', index));
-});
-
-document.querySelectorAll('.macbook-ram').forEach((ram, index) => {
-    ram.addEventListener('click', () => updateVisibility('ram', index));
-});
-
-document.querySelectorAll('.macbook-storage').forEach((storage, index) => {
-    storage.addEventListener('click', () => updateVisibility('storage', index));
-});
-
-
-
-function processorFunction(processors) {
-    hasProcessorSelected = true;
-    document.querySelectorAll('.macbook-processor').forEach((processor, idx) => {
-        processor.classList.toggle('btn-remove', !processors.includes(idx));
-        processor.classList.toggle('btn-border-remove', !processors.includes(idx));
-    });
-}
-
-function ramFunction(rams) {
-    hasRamSelected = true;
-    document.querySelectorAll('.macbook-ram').forEach((ram, idx) => {
-        ram.classList.toggle('btn-remove', !rams.includes(idx));
-        ram.classList.toggle('btn-border-remove', !rams.includes(idx));
-    });
-}
-
-function storageFunction(storages) {
-    hasStorageSelected = true;
-    document.querySelectorAll('.macbook-storage').forEach((storage, idx) => {
-        storage.classList.toggle('btn-remove', !storages.includes(idx));
-        storage.classList.toggle('btn-border-remove', !storages.includes(idx));
-    });
-}
-
-
-function wholeProcessorRamStorageFunction(processors, rams, storages) {
-    processorFunction(processors);
-    ramFunction(rams);
-    storageFunction(storages);
-}
-
-function updateVisibility(type, index) {
-
-    const visibilityMap = {
-        'processor': [
-            [[0], [0], [0]],      
-            [[1], [0], [1]],      
-            [[2], [1], [2]]       
-        ],
-        'ram': [
-            // RAM 0 specific case
-            [[0, 1], [0], [0, 1]],  // Click on RAM 0 (first selection shows everything)
-
-            // RAM 1 specific case
-            [[2], [1], [2]],       
-
-            // RAM 0 after Processor 1 or Storage 1
-            [[1], [0], [1]],        // Click on RAM 0 after Processor 1 or Storage 1
-
-            // RAM 0 after Processor 0 or Storage 0
-            [[0], [0], [0]]      // Click on RAM 0 after Processor 0 or Storage 0
-        ],
-        'storage': [
-            [[0], [0], [0]],        
-            [[1], [0], [1]],        
-            [[2], [1], [2]]         
-        ]
-    };
-
-    
-    if (isFirstSelection && (selectedCategory === '' || selectedCategory === type)) {
-        selectedCategory = type;  // Mark this category as the first selection
-
-        // For the first click in Processor, RAM, or Storage, show all buttons in that category
-        document.querySelectorAll(`.macbook-${type}`).forEach(btn => {
-            btn.classList.remove('btn-remove', 'btn-border-remove'); // Show all buttons in this category
-        });
-
-        const [processors, rams, storages] = visibilityMap[type][index];
-
-        // Update visibility for other categories based on the first selection
-        if (type === 'processor') {
-            selectedProcessorIndex = index; 
-
-            ramFunction(rams);
-
-            storageFunction(storages);
-         } else if (type === 'ram') {
-
-            processorFunction(processors);
-
-            storageFunction(storages);
-        } else if (type === 'storage') {
-            selectedStorageIndex = index; 
-            
-            processorFunction(processors);
-
-            ramFunction(rams);
-        }
-        
-        return; // Allow the user to make further clicks in the first category
-    }
-
-    // Special handling for RAM clicks based on prior selection in Processor or Storage
-    if (type === 'ram') {
-        let ramVisibility;
-        
-        // If the first selection was made in Processor or Storage, adjust RAM visibility based on that
-        if (selectedProcessorIndex === 0 || selectedStorageIndex === 0) {
-            ramVisibility = visibilityMap['ram'][3]; // Show this: [[0], [0], [0]]
-        } else if (selectedProcessorIndex === 1 || selectedStorageIndex === 1) {
-            ramVisibility = visibilityMap['ram'][2]; // Show this: [[1], [0], [1]]
-        } else if (selectedProcessorIndex === 2 || selectedStorageIndex === 2) {
-            ramVisibility = visibilityMap['ram'][1]; // Show this: [[2], [1], [2]] for RAM 1
-        } else {
-            ramVisibility = visibilityMap['ram'][0]; // Default: [[0, 1], [0], [0, 1]]
-        }
-
-        const [processors, rams, storages] = ramVisibility;
-
-        wholeProcessorRamStorageFunction(processors, rams, storages);
-
-        isFirstSelection = false; // Mark the first selection as done
-        return;
-    }
-
-    // Regular visibility logic for Processor or Storage after the first selection
-    const [processors, rams, storages] = visibilityMap[type][index];
-
-    wholeProcessorRamStorageFunction(processors, rams, storages);
-
-    isFirstSelection = false; // Mark the first selection as done
-
-    if (hasProcessorSelected && hasRamSelected && hasStorageSelected === true) {
-        document.querySelector('.clear-button').classList.remove('left-right-btns');
-    }
-    
-}
-
-
-// Clear Select Options
-
-document.querySelector('.clear-button').addEventListener('click', function(){
-    // Reset state variables
-    isFirstSelection = true;
-    selectedCategory = '';
-    selectedProcessorIndex = null;
-    selectedStorageIndex = null;
-
-    hasProcessorSelected = false; // Reset processor selection tracking
-    hasRamSelected = false;        // Reset RAM selection tracking
-    hasStorageSelected = false;    // Reset storage selection tracking
-
-    // Show all buttons in each category
-    document.querySelectorAll('.macbook-processor').forEach(processor => {
-        processor.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
-    });
-
-    document.querySelectorAll('.macbook-ram').forEach(ram => {
-        ram.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
-    });
-
-    document.querySelectorAll('.macbook-storage').forEach(storage => {
-        storage.classList.remove('btn-remove', 'btn-border-remove', 'btn-border-active');
-    });
-
-    // Hide the clear button after clearing selections
-    document.querySelector('.clear-button').classList.add('left-right-btns');    
-});
-
-

@@ -578,14 +578,14 @@
 .left-right-btns{
     display: none !important;
 }
-.shopping-ul::-webkit-scrollbar, .macbook-options::-webkit-scrollbar{
+.shopping-ul::-webkit-scrollbar, .macbook-options::-webkit-scrollbar, .box-detail::-webkit-scrollbar{
     width: 5px;    
 }
 
-.shopping-ul::-webkit-scrollbar-track, .macbook-options::-webkit-scrollbar-track{
+.shopping-ul::-webkit-scrollbar-track, .macbook-options::-webkit-scrollbar-track, .box-detail::-webkit-scrollbar-track{
     background: rgba(0, 0, 0, 0.05);      
 }
-.shopping-ul::-webkit-scrollbar-thumb, .macbook-options::-webkit-scrollbar-thumb{
+.shopping-ul::-webkit-scrollbar-thumb, .macbook-options::-webkit-scrollbar-thumb, .box-detail::-webkit-scrollbar-thumb{
     background: rgba(0, 0, 0, 0.12);         
 }
 
@@ -601,3 +601,17 @@
     cursor: default !important;
     pointer-events: none !important;
 }
+@keyframes price-animation {
+    from {
+        transform: translate3d(0, 20px, 0)
+    }
+
+    to {
+        transform: none
+    }
+}
+
+.animation-price{
+    animation: price-animation .3s ease;
+}
+

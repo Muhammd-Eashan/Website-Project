@@ -87,10 +87,18 @@ function updateCountdown() {
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  document.getElementById('days').innerText = days;
-  document.getElementById('hours').innerText = hours;
-  document.getElementById('minutes').innerText = minutes;
-  document.getElementById('seconds').innerText = seconds;
+  document.querySelectorAll('.days').forEach(day => {
+    day.innerText = days;
+  })
+  document.querySelectorAll('.hours').forEach(hour => {
+    hour.innerText = hours;
+})
+  document.querySelectorAll('.minutes').forEach(minute => {
+      minute.innerText = minutes;
+})
+  document.querySelectorAll('.seconds').forEach(second => {
+    second.innerText = seconds;
+  })
 }
 
 // Update the countdown every second
@@ -299,7 +307,7 @@ document.getElementById("arrow-next").addEventListener("click", function() {
     const totalItems = items.length;
     
     let itemsToMove;
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 768) {
         itemsToMove = 4; // Move 4 items on larger screens
     } else {
         itemsToMove = 2; // Move 2 items on smaller screens
@@ -1143,3 +1151,226 @@ function returnToShop(){
 
 generateCartItems();
 calculate();
+
+
+
+// ARROW BUTTONS FUNCTIONS FOR FIFTH ROW ITEMS
+
+const containers = document.querySelectorAll(".fifth-row-content-items");
+let TranslateX = {};
+
+containers.forEach((container, index) => {
+    TranslateX[index] = 0;
+    const items = container.children;
+    let itemWidth = items[0].offsetWidth;
+
+    // Recalculate item width on resize
+    window.addEventListener("resize", () => {
+        itemWidth = items[0].offsetWidth;
+        TranslateX[index] = 0; // Reset translateX for consistency on resize
+        container.style.transform = `translateX(${TranslateX[index]}px)`;
+    });
+});
+
+
+// Set the items to move based on screen width
+function getItemsToMove() {
+    if (window.innerWidth >= 1024) return 2;
+    else if (window.innerWidth >= 768) return 3;
+    else return 1;
+}
+
+containers.forEach((container, index) =>{
+document.querySelector(`.arrow-next[data-index="${index}"]`).addEventListener("click", () => moveItems("next", index));
+document.querySelector(`.arrow-prev[data-index="${index}"]`).addEventListener("click", () => moveItems("prev", index));
+});
+function moveItems(direction, containerIndex) {
+    const container = containers[containerIndex];
+    const containerWidth = container.scrollWidth;
+    const visibleWidth = container.clientWidth;
+    const itemsToMove = getItemsToMove();
+    const maxTranslateX = -(containerWidth - visibleWidth);
+    const items = container.children;
+    let itemWidth = items[0].offsetWidth;
+
+    // Ensure precise translation per item on small screens
+    const translateAmount = itemsToMove * itemWidth;
+
+    if (direction === "next") {
+        TranslateX[containerIndex] -= translateAmount;
+        TranslateX[containerIndex] = Math.max(TranslateX[containerIndex], maxTranslateX);
+    } else if (direction === "prev") {
+        TranslateX[containerIndex] += translateAmount;
+        TranslateX[containerIndex] = Math.min(TranslateX[containerIndex], 0);
+    }
+
+    container.style.transform = `translateX(${TranslateX[containerIndex]}px)`;
+}
+
+let isDragging = false;
+let startX;
+let dragDistance = 0;
+let activeContainerIndex = null; // Track the active container index
+
+containers.forEach((container, index) => {
+    // Handle mousedown event to start drag
+    container.addEventListener('mousedown', function (e) {
+        isDragging = true;
+        startX = e.pageX;
+        dragDistance = 0; // Reset drag distance
+        activeContainerIndex = index; // Set the active container
+        container.style.cursor = "grabbing";
+        e.preventDefault();
+    });
+
+    container.addEventListener('mousemove', function (e) {
+        if (!isDragging || activeContainerIndex !== index) return; // Ignore if not active container
+
+        // Calculate drag distance without snapping during drag
+        dragDistance = (e.pageX - startX) * 4;
+
+        // Apply a temporary translate effect based on drag
+        container.style.transform = `translateX(${TranslateX[index] + dragDistance}px)`;
+    });
+
+    container.addEventListener('mouseleave', function () {
+        if (isDragging && activeContainerIndex === index) {
+            isDragging = false;
+            container.style.transform = `translateX(${TranslateX[index]}px)`; // Reset position
+            container.style.cursor = "grab";
+            dragDistance = 0;
+            activeContainerIndex = null; // Reset active container
+        }
+    });
+});
+
+document.addEventListener('mouseup', function () {
+    if (isDragging && activeContainerIndex !== null) {
+        const container = containers[activeContainerIndex]; // Only update the active container
+        const items = container.children;
+        let itemWidth = items[0].offsetWidth;
+        const itemsToMove = getItemsToMove();
+        const threshold = itemsToMove * itemWidth; // Snap threshold
+
+        if (Math.abs(dragDistance) >= threshold) {
+            if (dragDistance > 0) {
+                moveItems("prev", activeContainerIndex);
+            } else {
+                moveItems("next", activeContainerIndex);
+            }
+        } else {
+            // If not enough distance dragged, reset to original position
+            container.style.transform = `translateX(${TranslateX[activeContainerIndex]}px)`;
+        }
+
+        // Reset drag variables
+        isDragging = false;
+        dragDistance = 0;
+        activeContainerIndex = null; // Clear active container
+        container.style.cursor = "grab";
+    }
+});
+
+// ARROW BUTTONS FUNCTIONS FOR SEVENTH ROW ITEMS
+
+
+const itemsContainer = document.querySelector(".Seventh-row-items");
+const containersItems = itemsContainer.children;
+let itemsWidth = containersItems[0].offsetWidth;
+let TranslatingX = 0;
+
+document.querySelector(".arrow-next-2").addEventListener("click", () => movingItems("next"));
+document.querySelector(".arrow-prev-2").addEventListener("click", () => movingItems("prev"));
+
+function movingItems(direction) {
+    const containerWidth = itemsContainer.scrollWidth;
+    const visibleWidth = itemsContainer.clientWidth;
+    const maxTranslatingX = -(containerWidth - visibleWidth);
+
+    // Ensure precise translation per item on small screens
+    const translateAmount = itemsWidth;
+
+    if (direction === "next") {
+        TranslatingX -= translateAmount;
+        TranslatingX = Math.max(TranslatingX, maxTranslatingX);
+    } else if (direction === "prev") {
+        TranslatingX += translateAmount;
+        TranslatingX = Math.min(TranslatingX, 0);
+    }
+
+    itemsContainer.style.transform = `translateX(${TranslatingX}px)`;
+}   
+
+
+
+let Dragging = false;
+let startingX;
+let draggingDistance = 0;
+
+// Handle mousedown event to start drag
+itemsContainer.addEventListener('mousedown', function (e) {
+    Dragging = true;
+    startingX = e.pageX;
+    draggingDistance = 0; // Reset drag distance
+    itemsContainer.style.cursor = "grabbing";
+    e.preventDefault();
+});
+
+itemsContainer.addEventListener('mousemove', function (e) {
+    if (!Dragging) return;
+
+    // Calculate drag distance without snapping during drag
+    draggingDistance = (e.pageX - startingX ) * 6;
+
+    // Apply a temporary translate effect based on drag
+    itemsContainer.style.transform = `translateX(${TranslatingX + draggingDistance}px)`;
+});
+
+document.addEventListener('mouseup', function () {
+    if (Dragging) {
+
+        if (Math.abs(draggingDistance) >= itemsWidth) {
+            if (draggingDistance > 0) {
+                movingItems("prev");
+            } else {
+                movingItems("next");
+            }
+        } else {
+            // If not enough distance dragged, reset to original position
+            itemsContainer.style.transform = `translateX(${TranslatingX}px)`;
+        }
+
+        Dragging = false;
+        itemsContainer.style.cursor = "grab";
+    }
+    draggingDistance = 0; // Reset drag distance after releasing
+});
+
+itemsContainer.addEventListener('mouseleave', function () {
+    if (Dragging) {
+        Dragging = false;
+        itemsContainer.style.transform = `translateX(${TranslatingX}px)`; // Reset position on mouse leave
+        itemsContainer.style.cursor = "grab";
+        draggingDistance = 0;
+    }
+});
+
+
+
+document.querySelector(".Read-More").addEventListener("click", function(event){
+    if (document.querySelector(".collapse-button-1").classList.contains("collapse-button")) {
+        event.preventDefault();
+        document.querySelector(".Tenth-row-container").style.maxHeight = "100%"
+        document.querySelector(".collapse-button-1").classList.remove("collapse-button")
+        document.querySelector(".Read-More").innerHTML = `Read Less <span ><i class="fa-solid fa-chevron-up text-[15px]"></i></span>`
+        document.querySelector(".collapse-button-2").classList.remove("collapse-button")
+        document.querySelector(".collapse-button-2").style.display = "none"
+    }else{
+        event.preventDefault();
+        document.querySelector(".Tenth-row-container").style.maxHeight = "205px"
+        document.querySelector(".collapse-button-1").classList.add("collapse-button")
+        document.querySelector(".Read-More").innerHTML = `Read More <span ><i class="fa-solid fa-chevron-down text-[15px]"></i></span>`
+        document.querySelector(".collapse-button-2").classList.add("collapse-button")
+        document.querySelector(".collapse-button-2").style.display = "block"
+    }
+});

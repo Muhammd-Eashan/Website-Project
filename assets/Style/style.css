@@ -515,8 +515,6 @@
 }
 .custom-container{
     max-width: 1400px;
-    padding-right: 15px;
-    padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -617,4 +615,36 @@
 
 .promo-banner:hover img{
     transform: scale(1.09);
+}
+@media (min-width: 1025px){
+    .fifth-row{
+        background-image: url(https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/Content.jpg?id=1385);
+        width: calc(99vw - 17px - 60px);
+        position: relative;
+        left: calc((50% - 50vw + 60px / 2 + 17px / 2) + 15px);
+    }
+}
+@media (min-width: 1400px){
+    .fifth-row{
+        padding-left: calc((99vw - 1400px - 60px - 17px) / 2) ;
+        padding-right: calc((99vw - 1400px - 60px - 17px) / 2) ;
+    }
+}
+
+.Seventh-row-content-items:hover .arrow-prev-2,
+.Seventh-row-content-items:hover .arrow-next-2{
+    opacity: 1;
+    visibility: visible;
+    transform: none
+}
+
+.share-icon:hover .share-icon-brands{
+    opacity: 1;
+}
+.Ninth-row-items:hover .items-img{
+    transform: scale(1.1);
+}
+.collapse-button{
+    position: absolute;
+    bottom: 0;
 }

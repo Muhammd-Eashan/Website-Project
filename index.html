@@ -30,7 +30,7 @@
             extend: {
                 screens: {
                 'xs': '120px',
-                // => @media (min-width: 320px) { ... }
+                // => @media (min-width: 120px) { ... }
                 '3xl': '1536px',
                 // => @media (min-width: 1536px) { ... }
                 'mmd' : '993px'
@@ -774,10 +774,10 @@
                 </div>
 
             </header>
-            <div class="main-page bg-[rgb(246,246,246)] h-[5000px]">
-                <div class="custom-container h-[100%]">
-                    <div class="main-page-content h-[100%] pt-[20px]">
-                        <div class="first-row-content mb-[90px] d-lg-flex gap-[15px]">
+            <div class="main-page bg-[rgb(246,246,246)]">
+                <div class="custom-container">
+                    <div class="main-page-content pt-[20px] pb-[40px]">
+                        <div class="first-row-content mb-[90px] d-lg-flex gap-[15px] overflow-hidden">
                             <div class="column-1 xs:mb-[20px] lg:mb-[0]">
                                 <div class="slider">
                                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -843,19 +843,19 @@
                                             <div class="mt-[10px]">
                                                 <div class="countdown-container">
                                                     <div class="countdown-item">
-                                                      <span id="days">119</span>
+                                                      <span class="days"></span>
                                                       <p>Days</p>
                                                     </div>
                                                     <div class="countdown-item">
-                                                      <span id="hours">14</span>
+                                                      <span class="hours"></span>
                                                       <p>Hr</p>
                                                     </div>
                                                     <div class="countdown-item">
-                                                      <span id="minutes">25</span>
+                                                      <span class="minutes"></span>
                                                       <p>Min</p>
                                                     </div>
                                                     <div class="countdown-item">
-                                                      <span id="seconds">15</span>
+                                                      <span class="seconds"></span>
                                                       <p>Sc</p>
                                                     </div>
                                                   </div>
@@ -899,7 +899,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="second-row mb-[60px] xs:mt-[220px] sm:mt-[0px]">
+                        <div class="second-row mb-[60px] xs:mt-[220px] sm:mt-[0px] overflow-hidden">
                             <div class="heading mb-[20px] text-[26px] font-semibold">
                                 <h4>Popular Categories</h4>
                             </div>
@@ -989,7 +989,7 @@
                             <div id="arrow-prev" class="arrow-scroll cursor-pointer absolute mmd:top-[98.5%] sm:top-[148%] xs:top-[160%]"><i class="fa-solid fa-chevron-left"></i></div>
 
                         </div>
-                        <div class="third-row mb-[50px]">
+                        <div class="third-row mb-[50px] overflow-hidden">
                             <div class="third-row-heading flex justify-between">
                                 <div class="third-row-title text-[26px] font-semibold mb-[20px]"><h4>The Best Offers</h4></div>
                                 <div class="third-row-link text-[13px] text-[rgb(28,97,231)] mb-[20px]">
@@ -1557,9 +1557,6 @@
                                                         <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
                                                         <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
                                                     </div>
-                                                    <div class="flex absolute min-width[50px] flex-column gap-[10px]">
-                                                        <span class="py-[5px] px-[10px] w-[50px] text-[#fff] text-center uppercase font-semibold text-[12px] rounded-[12px] leading-[1.2] bg-[#E22D2D]">hot</span>
-                                                    </div>
                                                     <img class="img" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/samsung-neo-qled-55qn85a-1.jpg">
                                                 
                                                 </a>
@@ -1777,7 +1774,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="fourth-row mb-[80px] flex">
+                        <div class="fourth-row mb-[80px] flex overflow-hidden">
                             <div class="mmd:w-[25%] xs:w-0 xs:hidden mmd:block">
                                 <div class="px-[10px] h-[540px]">
                                     <div class="promo-banner relative overflow-hidden rounded-[10px]">
@@ -2718,9 +2715,1597 @@
                                 </div>            
                             </div>
                         </div>
+                        <div class="fifth-row relative bg-cover bg-center xl:mb-[80px] xl:py-[50px] md:mb-[60px] md:py-[40px] xs:mb-[40px] xs:py-[20px] overflow-hidden">
+                            <div class="w-[100%] px-[15px]">
+                                <div class="md:flex">
+                                    <div class="md:w-[42%] md:float-left">
+                                        <div class="px-[15px] w-[100%]">
+                                            <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-shopping-event-full-img.png">
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center md:w-[58%] md:float-left">
+                                        <div class="px-[15px] w-[100%] h-[325px]">
+                                            <div class="mb-[20px]">
+                                                <h4 class="xl:leading-[62px] xl:text-[52px] md:leading-[42px] md:text-[32px] xs:leading-[30px] xs:text-[20px] mb-[10px] font-semibold">Apple Shopping Event</h4>
+                                                <div class="xl:leading-[34px] xl:text-[24px] md:leading-[28px] md:text-[18px] xs:leading-[26px] xs:text-[16px] text-[rgba(15,15,15,0.8)]">Hurry and get discounts on all Apple devices up to 20%</div>
+                                            </div>
+                                            <div class="mt-[10px]">
+                                                <div class="countdown-container">
+                                                    <div class="countdown-item">
+                                                      <span class="days lg:!text-[28px]"></span>
+                                                      <p class="lg:!text-[16px]">Days</p>
+                                                    </div>
+                                                    <div class="countdown-item">
+                                                      <span class="hours lg:!text-[28px]"></span>
+                                                      <p class="lg:!text-[16px]">Hr</p>
+                                                    </div>
+                                                    <div class="countdown-item">
+                                                      <span class="minutes lg:!text-[28px]"></span>
+                                                      <p class="lg:!text-[16px]">Min</p>
+                                                    </div>
+                                                    <div class="countdown-item">
+                                                      <span class="seconds lg:!text-[28px]"></span>
+                                                      <p class="lg:!text-[16px]">Sc</p>
+                                                    </div>
+                                                  </div>
+                                            </div>
+                                            <div class="mt-[15px] mb-[20px]">
+                                                <a href="#" class="inline-flex rounded-[5px] items-center gap-[5px] text-[13px] h-[42px] bg-[rgb(28,97,231)] text-white px-[20px] py-[5px]">Go Shopping
+                                                    <span class="fa-solid fa-chevron-right relative top-[1px]"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-100 relative mb-[30px]">
+                                    <div class="relative group">
+                                        <div class="relative px-[15px] overflow-hidden rounded-[10px]">
+                                            <div class="fifth-row-content-items relative flex transition-all duration-300 cursor-grab">
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-ipad-mini-starlight-1-80x80.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">iPad Mini</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$600.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/apple-watch-ultra-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple Watch</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$799.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none  rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-macbook-air-13-space-gray-1-2.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple Macbook</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$999.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/apple-iphone-14-plus-blue-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple iPhone 14</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$799.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/apple-imac-24-M1-blue-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple iMac 24"</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$1299.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/apple-magic-keyboard-with-touch-id-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple Mage</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$270.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none  rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/apple-magsafe-clear-case-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple MagSafe</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$50.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div data-index="0" class="arrow-prev inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[30%] right-[97%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[-30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                            <div data-index="0" class="arrow-next inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[30%] left-[96%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Sixth-row mb-[80px] overflow-hidden">
+                            <div class="third-row-heading flex justify-between">
+                                <div class="third-row-title text-[26px] font-semibold mb-[20px]"><h4>Home Appliance</h4></div>
+                                <div class="third-row-link text-[13px] text-[rgb(28,97,231)] mb-[20px]">
+                                    <a href="#" class="flex items-center rounded-[35px] h-[42px] px-[20px] py-[5px] hover:bg-[rgba(28,97,231,0.15)]"><span>More Products</span>
+                                    <i class="fa-solid fa-chevron-right ml-[5px] text-[15px] relative top-[1px] leading-[20px]"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="third-row-content">
+                                <div class="third-row-content-container grid lg:grid-cols-5 md:grid-cols-3 xs:grid-cols-2 lg:gap-[20px] sm:gap-[20px]">
+                                    <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%]">
+                                        <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                            <div class="box-hover h-[745px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                            <div>
+                                                <a href="#" class="w-100 relative">
+                                                    <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-1.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-2.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-3.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-1.jpg"></div>
+                                                    </div>
+                                                    <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                        <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                        <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                    </div>
+                                                    <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                    </div>
+                                                    <div class="flex absolute min-width[50px] flex-column gap-[10px]">
+                                                        <span class="py-[5px] px-[10px] w-[50px] text-[#fff] text-center uppercase font-semibold text-[12px] rounded-[12px] leading-[1.2] bg-[#438E44]">NEW</span>
+                                                    </div>
+                                                    <img class="img" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-1.jpg">
+                                                
+                                                </a>
+                                                <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                    <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                </div>
+                                                <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[170px] translate-x-[20px] opacity-0 invisible ">
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                        <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-column gap-[12px] relative">
+                                                <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                    <a href="@" class="hover:text-[#a5a5a5]">ARIETE 0979</a>
+                                                </h3>
+                                                <div class="text-[15.25px] text-[#a5a5a5]">
+                                                    <a href="@" class="hover:text-[#555]">Ovens</a>
+                                                </div> 
+                                                <div class="text-[#838383]">
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                                <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                <div class="flex justify-between">
+                                                    <div>
+                                                        <span class="text-[rgb(28,97,231)]">$110.00</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="box-btn" onclick="add_to_cart(10)">
+                                                    <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                    </a>    
+                                                </div>
+                                                <div class="text-[14px]">
+                                                    <span class="text-[#333] font-semibold">SKU:</span>
+                                                    <span class="text-[#a5a5a5]">730035</span>
+                                                </div>
+                                            </div>  
+                                            <div class="box-detail pt-[15px] h-[112px] text-[14px] invisible opacity-0 bg-white absolute">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Brand:</th>
+                                                            <td>Alogic</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Color:</th>
+                                                            <td>Green</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Installation method:</th>
+                                                            <td>Separate</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Energy rating:</th>
+                                                            <td>B</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Release years:</th>
+                                                            <td>2020</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Weight:</th>
+                                                            <td>26.5 kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Manufacturer guarantee:</th>
+                                                            <td>12 months</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%]">
+                                        <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                            <div class="box-hover h-[745px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                            <div>
+                                                <a href="#" class="w-100 relative">
+                                                    <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-1.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-2.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-3.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-1.jpg"></div>
+                                                    </div>
+                                                    <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                        <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                        <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                    </div>
+                                                    <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                    </div>
+                                                    <img class="img" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-1.jpg">
+                                                
+                                                </a>
+                                                <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                    <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                </div>
+                                                <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[170px] translate-x-[20px] opacity-0 invisible ">
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                        <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-column gap-[12px] relative">
+                                                <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                    <a href="@" class="hover:text-[#a5a5a5]">ARIETE 986</a>
+                                                </h3>
+                                                <div class="text-[15.25px] text-[#a5a5a5]">
+                                                    <a href="@" class="hover:text-[#555]">Ovens</a>
+                                                </div> 
+                                                <div class="text-[#838383]">
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                                <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                <div class="flex justify-between">
+                                                    <div>
+                                                        <span class="text-[rgb(28,97,231)]">$150.00</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="box-btn" onclick="add_to_cart(11)">
+                                                    <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                    </a>    
+                                                </div>
+                                                <div class="text-[14px]">
+                                                    <span class="text-[#333] font-semibold">SKU:</span>
+                                                    <span class="text-[#a5a5a5]">730036</span>
+                                                </div>
+                                            </div>  
+                                            <div class="box-detail pt-[15px] h-[112px] text-[14px] invisible opacity-0 bg-white absolute">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Brand:</th>
+                                                            <td>Alogic</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Color:</th>
+                                                            <td>Silver</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Installation method:</th>
+                                                            <td>Separate</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Energy rating:</th>
+                                                            <td>B</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Release years:</th>
+                                                            <td>2020</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Weight:</th>
+                                                            <td>26.5 kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Manufacturer guarantee:</th>
+                                                            <td>12 months</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%]">
+                                        <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                            <div class="box-hover h-[745px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                            <div>
+                                                <a href="#" class="w-100 relative">
+                                                    <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-1.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-2.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-3.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-1.jpg"></div>
+                                                    </div>
+                                                    <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                        <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                        <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                    </div>
+                                                    <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                    </div>
+                                                    <img class="img" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-1.jpg">
+                                                
+                                                </a>
+                                                <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                    <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                </div>
+                                                <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[170px] translate-x-[20px] opacity-0 invisible ">
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                        <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-column gap-[12px] relative">
+                                                <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                    <a href="@" class="hover:text-[#a5a5a5]">Bamix DeLuxe M200</a>
+                                                </h3>
+                                                <div class="text-[15.25px] text-[#a5a5a5]">
+                                                    <a href="@" class="hover:text-[#555]">Blenders</a>
+                                                </div> 
+                                                <div class="text-[#EABE12]">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fa-regular fa-star text-[#838383]"></i>
+                                                </div>
+                                                <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                <div class="flex justify-between">
+                                                    <div>
+                                                        <span class="text-[rgb(28,97,231)]">$230.00</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="box-btn" onclick="add_to_cart(12)">
+                                                    <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                    </a>    
+                                                </div>
+                                                <div class="text-[14px]">
+                                                    <span class="text-[#333] font-semibold">SKU:</span>
+                                                    <span class="text-[#a5a5a5]">730044</span>
+                                                </div>
+                                            </div>  
+                                            <div class="box-detail pt-[15px] h-[112px] text-[14px] invisible opacity-0 bg-white absolute">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Brand:</th>
+                                                            <td>Benq</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Color:</th>
+                                                            <td>Wjite</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Installation method:</th>
+                                                            <td>Separate</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Energy rating:</th>
+                                                            <td>D</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Release years:</th>
+                                                            <td>2020</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Weight:</th>
+                                                            <td>26.5 kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Manufacturer guarantee:</th>
+                                                            <td>12 months</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%]">
+                                        <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                            <div class="box-hover h-[745px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                            <div>
+                                                <a href="#" class="w-100 relative">
+                                                    <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-1.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-2.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-3.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-1.jpg"></div>
+                                                    </div>
+                                                    <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                        <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                        <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                    </div>
+                                                    <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                    </div>
+                                                    <div class="flex absolute min-width[50px] flex-column gap-[10px]">
+                                                        <span class="py-[5px] px-[10px] w-[50px] text-[#fff] text-center uppercase font-semibold text-[12px] rounded-[12px] leading-[1.2] bg-[#438E44]">NEW</span>
+                                                    </div>
+                                                    <img class="img" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-1.jpg">
+                                                
+                                                </a>
+                                                <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                    <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                </div>
+                                                <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[170px] translate-x-[20px] opacity-0 invisible ">
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                        <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-column gap-[12px] relative">
+                                                <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                    <a href="@" class="hover:text-[#a5a5a5]">Bamix Luxurylin M200</a>
+                                                </h3>
+                                                <div class="text-[15.25px] text-[#a5a5a5]">
+                                                    <a href="@" class="hover:text-[#555]">Blenders</a>
+                                                </div> 
+                                                <div class="text-[#838383]">
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                                <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                <div class="flex justify-between">
+                                                    <div>
+                                                        <span class="text-[rgb(28,97,231)]">$605.00</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="box-btn" onclick="add_to_cart(13)">
+                                                    <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                    </a>    
+                                                </div>
+                                                <div class="text-[14px]">
+                                                    <span class="text-[#333] font-semibold">SKU:</span>
+                                                    <span class="text-[#a5a5a5]">730043</span>
+                                                </div>
+                                            </div>  
+                                            <div class="box-detail pt-[15px] h-[112px] text-[14px] invisible opacity-0 bg-white absolute">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Brand:</th>
+                                                            <td>Benq</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Color:</th>
+                                                            <td>Gold</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Installation method:</th>
+                                                            <td>Separate</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Energy rating:</th>
+                                                            <td>E</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Release years:</th>
+                                                            <td>2022</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Weight:</th>
+                                                            <td>26.5 kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Manufacturer guarantee:</th>
+                                                            <td>12 months</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%]">
+                                        <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                            <div class="box-hover h-[745px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                            <div>
+                                                <a href="#" class="w-100 relative">
+                                                    <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-1.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-2.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-3.jpg"></div>
+                                                        <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-1.jpg"></div>
+                                                    </div>
+                                                    <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                        <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                        <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                    </div>
+                                                    <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                        <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                    </div>
+                                                    <img class="img" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-1.jpg">
+                                                
+                                                </a>
+                                                <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                    <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                </div>
+                                                <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[170px] translate-x-[20px] opacity-0 invisible ">
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                        <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                    <div class="inline-flex h-[45px] w-[50px] group">
+                                                        <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                        <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                        <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-column gap-[12px] relative">
+                                                <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                    <a href="@" class="hover:text-[#a5a5a5]">Bosch KUW20VHF0G</a>
+                                                </h3>
+                                                <div class="text-[15.25px] text-[#a5a5a5]">
+                                                    <a href="@" class="hover:text-[#555]">Fridges</a>
+                                                </div> 
+                                                <div class="text-[#838383]">
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                    <i class="fa-regular fa-star"></i>
+                                                </div>
+                                                <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                <div class="flex justify-between">
+                                                    <div>
+                                                        <span class="text-[rgb(28,97,231)]">$745.00</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <a href="#" class="box-btn" onclick="add_to_cart(14)">
+                                                    <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                    </a>    
+                                                </div>
+                                                <div class="text-[14px]">
+                                                    <span class="text-[#333] font-semibold">SKU:</span>
+                                                    <span class="text-[#a5a5a5]">730023</span>
+                                                </div>
+                                            </div>  
+                                            <div class="box-detail pt-[15px] h-[112px] text-[14px] invisible opacity-0 bg-white absolute">
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th>Brand:</th>
+                                                            <td>Benq</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Color:</th>
+                                                            <td>Black</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Installation method:</th>
+                                                            <td>Built-in</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Energy rating:</th>
+                                                            <td>F</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Release years:</th>
+                                                            <td>2020</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Weight:</th>
+                                                            <td>26.5 kg</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Manufacturer guarantee:</th>
+                                                            <td>12 months</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Seventh-row mb-[60px] flex overflow-hidden">
+                            <div class="mmd:w-[75%] xs:w-[100%]">
+                                <div class="w-100 px-[10px]">
+                                    <div class="xl:py-[76px] xs:py-[40px] mb-[20px]">
+                                        <div class="md:flex">
+                                            <div class="md:w-[42%] md:float-left">
+                                                <div class="px-[15px] w-[100%]">
+                                                    <img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/microsoft-accessories.jpg.webp">
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center md:w-[58%] md:float-left">
+                                                <div class="px-[15px] w-[100%]">
+                                                    <div class="mb-[25px]">
+                                                        <h4 class="xl:leading-[62px] xl:text-[53px] md:leading-[42px] md:text-[32px] xs:leading-[30px] xs:text-[20px] mb-[10px] font-semibold">Microsoft Accessories</h4>
+                                                        <div class="leading-[25px] text-[15px] text-[#838383] max-w-[445px]">Personalize your Surface Pro with Microsoft branded accessories. In the presence of many colors for every taste.</div>
+                                                    </div>
+                                                    <div class="mb-[10px] mr-[15px] inline-block">
+                                                        <a href="#" class="relative inline-flex items-center gap-[5px] leading-[1.2] cursor-pointer font-semibold py-[5px] px-[14px] h-[36px] text-[12px] text-[#333] hover:text-[#333]">
+                                                            <span class="w-[14px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/01/keyboard.svg"></span>
+                                                            Keyboard
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-[10px] mr-[15px] inline-block">
+                                                        <a href="#" class="relative inline-flex items-center gap-[5px] leading-[1.2] cursor-pointer font-semibold py-[5px] px-[14px] h-[36px] text-[12px] text-[#333] hover:text-[#333]">
+                                                            <span class="w-[14px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/01/pen.svg"></span>
+                                                            Surface pen
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-[10px] mr-[15px] inline-block">
+                                                        <a href="#" class="relative inline-flex items-center gap-[5px] leading-[1.2] cursor-pointer font-semibold py-[5px] px-[14px] h-[36px] text-[12px] text-[#333] hover:text-[#333]">
+                                                            <span class="w-[14px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/01/wirelss-mouse.svg"></span>
+                                                            Mices
+                                                        </a>
+                                                    </div>
+                                                    <div class="mb-[10px] mr-[15px] inline-block">
+                                                        <a href="#" class="relative inline-flex items-center gap-[5px] leading-[1.2] cursor-pointer font-semibold py-[5px] px-[14px] h-[36px] text-[12px] text-[#333] hover:text-[#333]">
+                                                            <span class="w-[14px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2023/01/headphone.svg"></span>
+                                                            Headphones
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="column-2-row-2 md:flex gap-[20px]">
+                                        <div class="row-1-content h-[160px] md:w-[50%] xs:w-[100%]">
+                                            <div class="h-[160px] w-[330px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
+                                                <div class="text-[18px] text-white font-semibold">
+                                                    <h4>Xiaomi MI 11</h4>
+                                                </div>
+                                                <div class="text-[#ffffffcc] text-[15px] mt-[7px] opacity-[.9]">
+                                                    <p>Discount up to 30%</p>
+                                                </div>
+                                                <div class="mt-[15px]">
+                                                    <a href="#" class="btn btn-light text-[12px]">View Details</a>
+                                                </div>
+                                            </div>
+                                            <img class="h-100 w-100 object-cover rounded-[10px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/xiaomi-mi-11-920x560.jpg">
+                                        </div>
+                                        <div class="row-1-content h-[160px] md:w-[50%] xs:w-[100%]">
+                                            <div class="h-[160px] max-w-[330px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
+                                                <div class="text-[18px] text-white font-semibold">
+                                                    <h4>HP Laser Jet</h4>
+                                                </div>
+                                                <div class="text-[#ffffffcc] text-[15px] mt-[7px] opacity-[.9]">
+                                                    <p>Personal printer</p>
+                                                </div>
+                                                <div class="mt-[15px]">
+                                                    <a href="#" class="btn btn-light text-[12px]">View Details</a>
+                                                </div>
+                                            </div>
+                                            <img class="h-100 w-100 object-cover rounded-[10px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/hp-laser-jet-920x560.jpg">
+                                        </div>
+                                        <div class="row-1-content h-[160px] md:w-[50%] xs:w-[100%]">
+                                            <div class="h-[160px] max-w-[330px] absolute p-[30px] flex justify-center d-flex flex-column z-[1]">
+                                                <div class="text-[18px] text-white font-semibold">
+                                                    <h4>White Joy Cons</h4>
+                                                </div>
+                                                <div class="text-[#ffffffcc] text-[15px] mt-[7px] opacity-[.9]">
+                                                    <p>Long-awaited novelty</p>
+                                                </div>
+                                                <div class="mt-[15px]">
+                                                    <a href="#" class="btn btn-light text-[12px]">View Details</a>
+                                                </div>
+                                            </div>
+                                            <img class="h-100 w-100 object-cover rounded-[10px]" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/white-joy-cons-920x560.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Seventh-row-content-items relative mmd:w-[25%] mmd:block xs:hidden cursor-grab">
+                                <div class="w-100 px-[10px] py-[15px] overflow-hidden">
+                                    <div class="Seventh-row-items relative flex z-1 transition-all duration-300">
+                                        <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%] shrink-0 basis-[100%]">
+                                            <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                                <div class="box-hover h-[645px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                                <div>
+                                                    <a href="#" class="w-100 relative">
+                                                        <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-7-ezel-1.jpg"></div>
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-7-ezel-2.jpg"></div>
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-7-ezel-3.jpg"></div>
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-7-ezel-4.jpg"></div>
+                                                        </div>
+                                                        <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                            <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                            <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                        </div>
+                                                        <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                        </div>
+                                                        <img class="img" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-7-ezel-1.jpg">
+                                                    
+                                                    </a>
+                                                    <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                        <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                    </div>
+                                                    <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[230px] translate-x-[20px] opacity-0 invisible ">
+                                                        <div class="inline-flex h-[45px] w-[50px] group">
+                                                            <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                            <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                            <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                        </div>
+                                                        <div class="inline-flex h-[45px] w-[50px] group">
+                                                            <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                            <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                            <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                        </div>
+                                                        <div class="inline-flex h-[45px] w-[50px] group">
+                                                            <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                            <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                            <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-column gap-[12px] relative">
+                                                    <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                        <a href="@" class="hover:text-[#a5a5a5]">Acer ConceptD 7 Ezel</a>
+                                                    </h3>
+                                                    <div class="text-[15.25px] text-[#a5a5a5]">
+                                                        <a href="@" class="hover:text-[#555]">Business Laptop</a>
+                                                    </div> 
+                                                    <div class="">
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </div>
+                                                    <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                    <div class="flex justify-between">
+                                                        <div>
+                                                            <span class="text-[rgb(28,97,231)]">$3,800.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="box-btn" onclick="add_to_cart(6)">
+                                                        <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                        </a>    
+                                                    </div>
+                                                    <div class="text-[14px]">
+                                                        <span class="text-[#333] font-semibold">SKU:</span>
+                                                        <span class="text-[#a5a5a5]">30890</span>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                        <div class="third-row-items md:p-[15px] xs:p-[10px] xs:h-[82%] sm:h-[100%] shrink-0 basis-[100%]">
+                                            <div class="box relative transition-transform duration-300 ease hover:translate-y-[-5px] hover:z-[2]">
+                                                <div class="box-hover h-[645px] w-[102%] absolute top-[-7px] left-[-2px] invisible opacity-0 rounded-[10px] bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] transform scale-[0.98]"></div>
+                                                <div>
+                                                    <a href="#" class="w-100 relative">
+                                                        <div class="lg:flex absolute h-100 w-100 xs:hidden">
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-ct300-1.jpg"></div>
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-ct300-2.jpg"></div>
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-ct300-3.jpg"></div>
+                                                            <div class="flex-1 img-container" data-img-src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-ct300-4.jpg"></div>
+                                                        </div>
+                                                        <div class="xs:flex lg:hidden items-center justify-between w-100 h-100 z-4 text-[#333] absolute">
+                                                            <div class="btn-left flex items-center justify-start w-[40px] h-[50px] pl-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-left"></i></div>
+                                                            <div class="btn-right flex items-center justify-end w-[40px] h-[50px] pr-[8px] hover:text-[#767676]"><i class="fa-solid fa-chevron-right"></i></div>
+                                                        </div>
+                                                        <div class="blocks w-100 absolute lg:flex gap-[4px] transition-all duration-300 ease bottom-[0] opacity-0 invisible xs:hidden">
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-bl-[4px]"></div>
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2]"></div>
+                                                            <div class="flex-1 single-block h-[4px] bg-dark transition-all duration-250 ease opacity-[0.2] rounded-br-[4px]"></div>
+                                                        </div>
+                                                        <div class="flex absolute min-width[50px] flex-column gap-[10px]">
+                                                            <span class="py-[5px] px-[10px] w-[50px] text-[#fff] text-center uppercase font-semibold text-[12px] rounded-[12px] leading-[1.2] bg-[#E22D2D]">hot</span>
+                                                        </div>
+                                                        <img class="img" src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-conceptd-ct300-1.jpg">
+                                                    
+                                                    </a>
+                                                    <div class="xs:inline-flex lg:hidden absolute top-[2%] right-[10%]">
+                                                        <a href="#" class="inline-flex h-[35px] w-[35px] items-center justify-center text-[#333] hover:text-[#767676]"><i class="fa-regular fa-heart text-[14px]"></i></a>
+                                                    </div>
+                                                    <div class="box-menu xs:hidden lg:flex flex-column max-h-[135px] max-w-[50px] shadow-[1px_1px_1px_rgba(0,0,0,0.1)] rounded-[8px] bg-white transition-all duration-300 ease-linear absolute text-[20px] top-[0] left-[230px] translate-x-[20px] opacity-0 invisible ">
+                                                        <div class="inline-flex h-[45px] w-[50px] group">
+                                                            <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-shuffle"></i></span></a>
+                                                            <span class=" absolute right-[100%] top-[6%] bg-dark text-white h-[34px] max-w-[200px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Compare</span>
+                                                            <span class="h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black absolute top-[19.5px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                        </div>
+                                                        <div class="inline-flex h-[45px] w-[50px] group">
+                                                            <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-solid fa-magnifying-glass"></i></span></a>
+                                                            <span class=" absolute right-[100%] top-[40%] bg-dark text-white h-[34px] w-[89px] rounded-[7px] px-[14px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Quick View</span>
+                                                            <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[65px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                        </div>
+                                                        <div class="inline-flex h-[45px] w-[50px] group">
+                                                            <a href="#" class="h-[45px] w-[50px] inline-flex items-center justify-center group-hover:text-[#767676]"><span><i class="fa-regular fa-heart"></i></span></a>
+                                                            <span class=" absolute right-[100%] top-[70%] bg-dark text-white h-[34px] w-[110px] rounded-[7px] px-[15px] text-[12px] flex items-center mr-[5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear">Add to wishlist</span>
+                                                            <span class="w-0 h-0 border-l-[5px] border-t-[5px] border-b-[5px] border-l-black border-t-transparent border-b-transparent absolute top-[108px] left-[-5px] opacity-0 invisible group-hover:opacity-100 group-hover:!visible transition-all duration-250 ease-linear"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex flex-column gap-[12px] relative">
+                                                    <h3 class="text-[rgba(16,16,16,0.9)] text-[15px] font-semibold max-h-[22px]">
+                                                        <a href="@" class="hover:text-[#a5a5a5]">ACER ConceptD CT300</a>
+                                                    </h3>
+                                                    <div class="text-[15.25px] text-[#a5a5a5]">
+                                                        <a href="@" class="hover:text-[#555]">Office PCs</a>
+                                                    </div> 
+                                                    <div class="text-[#EABE12]">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                    <p class="text-[#333] font-semibold"><i class="fa-solid fa-check mr-[5px] text-[rgb(28,97,231)]"></i>In stock</p>
+                                                    <div class="flex justify-between">
+                                                        <div>
+                                                            <span class="text-[rgb(28,97,231)]">$1,199.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <a href="#" class="box-btn" onclick="add_to_cart(7)">
+                                                        <span class="p-[12px] transition-transform duration-300 ease">Add To Cart</span>
+                                                        </a>    
+                                                    </div>
+                                                    <div class="text-[14px]">
+                                                        <span class="text-[#333] font-semibold">SKU:</span>
+                                                        <span class="text-[#a5a5a5]">30944</span>
+                                                    </div>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="arrow-prev-2 inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[40%] right-[99%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[-30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </div>
+                                    <div class="arrow-next-2 inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[40%] left-[88%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eighth-row overflow-hidden">
+                            <div class="px-[15px] mb-[70px]">
+                                <div class="third-row-title text-[26px] font-semibold mb-[20px]"><h4>Recently Viewed</h4></div>
+                                <div class="w-100 relative mb-[30px]">
+                                    <div class="relative group">
+                                        <div class="relative px-[15px] overflow-hidden rounded-[10px]">
+                                            <div class="fifth-row-content-items relative flex transition-all duration-300 cursor-grab">
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Bosch</a>
+                                                            </h3>
+                                                            <div class="text-[#838383] text-[12px]">
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$745.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Baymix Luxurylin</a>
+                                                            </h3>
+                                                            <div class="text-[#838383] text-[12px]">
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$605.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none  rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Baymix DeLuxe</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fa-regular fa-star text-[#838383]"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$230.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">ARIETE 986</a>
+                                                            </h3>
+                                                            <div class="text-[#838383] text-[12px]">
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$150.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">ARIETE 0979</a>
+                                                            </h3>
+                                                            <div class="text-[#838383] text-[12px]">
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                                <i class="fa-regular fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$110.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="relative leading-[1.4] flex-shrink-0 lg:w-[calc(100%/5)] md:w-[calc(100%/4)] xs:w-[calc(100%/1)]">
+                                                    <div class="flex bg-white flex-row rounded-[10px] p-[15px] gap-[15px] ">
+                                                        <div class="flex-none  rounded-[6.5px]">
+                                                            <a href="#">
+                                                                <img class="w-[80px] h-[80px]" src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/apple-magsafe-clear-case-1.jpg">
+                                                            </a>
+                                                        </div>
+                                                        <div class="flex flex-column gap-[7px] text-[15px]">
+                                                            <h3 class="text-[rgba(16,16,16,0.9)] overflow-hidden font-semibold max-h-[21px]">
+                                                                <a href="#" class="hover:text-[#838383] transition-all">Apple MagSafe</a>
+                                                            </h3>
+                                                            <div class="text-[#EABE12] text-[12px]">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                            <span class="text-[rgb(29,97,231)] text-[15px]">$50.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div data-index="1" class="arrow-prev inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[30%] right-[97%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[-30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                            <div data-index="1" class="arrow-next inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[30%] left-[96%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Ninth-row mb-[50px] overflow-hidden">
+                            <div class="px-[15px] mb-[70px]">
+                                <div class="text-[26px] font-semibold mb-[20px] pl-[10px]"><h4>Our Articles</h4></div>
+                                <div class="w-100 relative mb-[30px]">
+                                    <div class="relative group">
+                                        <div class="relative overflow-hidden rounded-[10px]">
+                                            <div class="fifth-row-content-items relative flex transition-all duration-300 cursor-grab">
+                                                <div class="Ninth-row-items relative leading-[1.4] px-[10px] flex-shrink-0 lg:w-[calc(100%/4)] md:w-[calc(100%/3)] xs:w-[calc(100%/1)]">
+                                                    <div class="relative overflow-hidden rounded-t-[10px]">
+                                                        <div class="items-img transition-all duration-700"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/best-gaming-laptop-model-entry-header.jpg.webp"></div>
+                                                        <a href="#" class="absolute inset-0"></a>
+                                                        <div class="flex items-center justify-end absolute inset-x-0 bottom-0 py-[15px] px-[20px] pointer-events-none" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);">
+                                                            <div class="flex gap-[5px] items-center text-[rgba(255,255,255,0.9)] text-[14px] flex-grow-1 pointer-events-auto">
+                                                                <img class="w-[22px] rounded-[50%]" src="https://woodmart.xtemos.com/wp-content/uploads/2018/10/avatar-home.jpg.webp">
+                                                                <a href="#" class="hover:text-[rgba(255,255,255,0.9)]">Mr. Mackay</a>
+                                                            </div>
+                                                            <div class="flex gap-[15px] pointer-events-auto">
+                                                                <div class="share-icon relative text-[rgba(255,255,255,0.9)]">
+                                                                    <div class="share-icon-brands absolute pointer-events-none mb-[8px] bottom-[100%] right-[-15px] transition-all duration-300 opacity-0">
+                                                                        <div class="p-[5px] bg-dark text-[#fff] rounded-[7px]">
+                                                                            <div class="flex">
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-facebook-f"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-x-twitter"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-pinterest"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-telegram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="absolute w-[10px] h-[10px] bg-dark right-[15px]" style="clip-path: polygon(0 0, 50% 50%, 100% 0);"></div>
+                                                                    </div>
+                                                                    <i class="fa-solid fa-share-nodes text-[18.27px] leading-[20px]"></i>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#" class="relative block w-[20px] h-[20px] leading-[20px] text-[rgba(255,255,255,0.9)] text-center hover:text-[rgba(255,255,255,0.9)]">
+                                                                        <i class="fa-regular fa-message"></i>
+                                                                        <span class="absolute top-[-4px] right-[-4px] w-[14px] h-[14px] leading-[14px] rounded-[50%] bg-[rgb(28,97,231)] text-[#fff] text-[9px]">0</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relative p-[25px]">
+                                                        <div class="flex mb-[10px] text-[13px] text-[#a5a5a5]">
+                                                            <div class="mr-[10px]">
+                                                                <a href="#" class="hover:text-[#333] transition-all">Gaming</a>, <a href="#" class="hover:text-[#333] transition-all">Laptops</a>
+                                                                <span class="ml-[8px]">/</span>
+                                                            </div>
+                                                            <div>14 Nov 2022</div>
+                                                        </div>
+                                                        <h3 class="text-[18px] text-dark leading-[1.4] font-semibold mb-[10px]"><a href="#" class="hover:text-[#a5a5a5] transition-all">Best Gaming Laptop Models</a></h3>
+                                                        <div class="text-[#a5a5a5]">
+                                                            <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li gram…</p>
+                                                        </div>
+                                                        <div class="mt-[15px]"><a href="#" class="text-[rgb(28,97,231)] text-[13px] font-bold leading-[1]">Continue Reading</a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="Ninth-row-items relative leading-[1.4] px-[10px] flex-shrink-0 lg:w-[calc(100%/4)] md:w-[calc(100%/3)] xs:w-[calc(100%/1)]">
+                                                    <div class="relative overflow-hidden rounded-t-[10px]">
+                                                        <div class="items-img transition-all duration-700"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/how-to-choose-a-hi-fi-stereo-system-entry-header.jpg.webp"></div>
+                                                        <a href="#" class="absolute inset-0"></a>
+                                                        <div class="flex items-center justify-end absolute inset-x-0 bottom-0 py-[15px] px-[20px] pointer-events-none" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);">
+                                                            <div class="flex gap-[5px] items-center text-[rgba(255,255,255,0.9)] text-[14px] flex-grow-1 pointer-events-auto">
+                                                                <img class="w-[22px] rounded-[50%]" src="https://woodmart.xtemos.com/wp-content/uploads/2018/10/avatar-home.jpg.webp">
+                                                                <a href="#" class="hover:text-[rgba(255,255,255,0.9)]">Mr. Mackay</a>
+                                                            </div>
+                                                            <div class="flex gap-[15px] pointer-events-auto">
+                                                                <div class="share-icon relative text-[rgba(255,255,255,0.9)]">
+                                                                    <div class="share-icon-brands absolute pointer-events-none mb-[8px] bottom-[100%] right-[-15px] transition-all duration-300 opacity-0">
+                                                                        <div class="p-[5px] bg-dark text-[#fff] rounded-[7px]">
+                                                                            <div class="flex">
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-facebook-f"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-x-twitter"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-pinterest"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-telegram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="absolute w-[10px] h-[10px] bg-dark right-[15px]" style="clip-path: polygon(0 0, 50% 50%, 100% 0);"></div>
+                                                                    </div>
+                                                                    <i class="fa-solid fa-share-nodes text-[18.27px] leading-[20px]"></i>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#" class="relative block w-[20px] h-[20px] leading-[20px] text-[rgba(255,255,255,0.9)] text-center hover:text-[rgba(255,255,255,0.9)]">
+                                                                        <i class="fa-regular fa-message"></i>
+                                                                        <span class="absolute top-[-4px] right-[-4px] w-[14px] h-[14px] leading-[14px] rounded-[50%] bg-[rgb(28,97,231)] text-[#fff] text-[9px]">0</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relative p-[25px]">
+                                                        <div class="flex mb-[10px] text-[13px] text-[#a5a5a5]">
+                                                            <div class="mr-[10px]">
+                                                                <a href="#" class="hover:text-[#333] transition-all">Hi-Fi</a>, <a href="#" class="hover:text-[#333] transition-all">Sound</a>
+                                                                <span class="ml-[8px]">/</span>
+                                                            </div>
+                                                            <div>14 Nov 2022</div>
+                                                        </div>
+                                                        <h3 class="text-[18px] text-dark leading-[1.4] font-semibold mb-[10px]"><a href="#" class="hover:text-[#a5a5a5] transition-all">Best Gaming Laptop Models</a></h3>
+                                                        <div class="text-[#a5a5a5]">
+                                                            <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum…</p>
+                                                        </div>
+                                                        <div class="mt-[15px]"><a href="#" class="text-[rgb(28,97,231)] text-[13px] font-bold leading-[1]">Continue Reading</a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="Ninth-row-items relative leading-[1.4] px-[10px] flex-shrink-0 lg:w-[calc(100%/4)] md:w-[calc(100%/3)] xs:w-[calc(100%/1)]">
+                                                    <div class="relative overflow-hidden rounded-t-[10px]">
+                                                        <div class="items-img transition-all duration-700"><img src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/logitech-pop-keys-entry-header.jpg.webp"></div>
+                                                        <a href="#" class="absolute inset-0"></a>
+                                                        <div class="flex items-center justify-end absolute inset-x-0 bottom-0 py-[15px] px-[20px] pointer-events-none" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);">
+                                                            <div class="flex gap-[5px] items-center text-[rgba(255,255,255,0.9)] text-[14px] flex-grow-1 pointer-events-auto">
+                                                                <img class="w-[22px] rounded-[50%]" src="https://woodmart.xtemos.com/wp-content/uploads/2018/10/avatar-home.jpg.webp">
+                                                                <a href="#" class="hover:text-[rgba(255,255,255,0.9)]">Mr. Mackay</a>
+                                                            </div>
+                                                            <div class="flex gap-[15px] pointer-events-auto">
+                                                                <div class="share-icon relative text-[rgba(255,255,255,0.9)]">
+                                                                    <div class="share-icon-brands absolute pointer-events-none mb-[8px] bottom-[100%] right-[-15px] transition-all duration-300 opacity-0">
+                                                                        <div class="p-[5px] bg-dark text-[#fff] rounded-[7px]">
+                                                                            <div class="flex">
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-facebook-f"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-x-twitter"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-pinterest"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-telegram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="absolute w-[10px] h-[10px] bg-dark right-[15px]" style="clip-path: polygon(0 0, 50% 50%, 100% 0);"></div>
+                                                                    </div>
+                                                                    <i class="fa-solid fa-share-nodes text-[18.27px] leading-[20px]"></i>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#" class="relative block w-[20px] h-[20px] leading-[20px] text-[rgba(255,255,255,0.9)] text-center hover:text-[rgba(255,255,255,0.9)]">
+                                                                        <i class="fa-regular fa-message"></i>
+                                                                        <span class="absolute top-[-4px] right-[-4px] w-[14px] h-[14px] leading-[14px] rounded-[50%] bg-[rgb(28,97,231)] text-[#fff] text-[9px]">0</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relative p-[25px]">
+                                                        <div class="flex mb-[10px] text-[13px] text-[#a5a5a5]">
+                                                            <div class="mr-[10px]">
+                                                                <a href="#" class="hover:text-[#333] transition-all">Keyboards</a>
+                                                                <span class="ml-[8px]">/</span>
+                                                            </div>
+                                                            <div>14 Nov 2022</div>
+                                                        </div>
+                                                        <h3 class="text-[18px] text-dark leading-[1.4] font-semibold mb-[10px]"><a href="#" class="hover:text-[#a5a5a5] transition-all">Logitech POP Keys</a></h3>
+                                                        <div class="text-[#a5a5a5]">
+                                                            <p>Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci…</p>
+                                                        </div>
+                                                        <div class="mt-[15px]"><a href="#" class="text-[rgb(28,97,231)] text-[13px] font-bold leading-[1]">Continue Reading</a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="Ninth-row-items relative leading-[1.4] px-[10px] flex-shrink-0 lg:w-[calc(100%/4)] md:w-[calc(100%/3)] xs:w-[calc(100%/1)]">
+                                                    <div class="relative overflow-hidden rounded-t-[10px]">
+                                                        <div class="items-img transition-all duration-700"><img src="https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/cameras-for-street-photography-entry-header.jpg.webp"></div>
+                                                        <a href="#" class="absolute inset-0"></a>
+                                                        <div class="flex items-center justify-end absolute inset-x-0 bottom-0 py-[15px] px-[20px] pointer-events-none" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);">
+                                                            <div class="flex gap-[5px] items-center text-[rgba(255,255,255,0.9)] text-[14px] flex-grow-1 pointer-events-auto">
+                                                                <img class="w-[22px] rounded-[50%]" src="https://woodmart.xtemos.com/wp-content/uploads/2018/10/avatar-home.jpg.webp">
+                                                                <a href="#" class="hover:text-[rgba(255,255,255,0.9)]">Mr. Mackay</a>
+                                                            </div>
+                                                            <div class="flex gap-[15px] pointer-events-auto">
+                                                                <div class="share-icon relative text-[rgba(255,255,255,0.9)]">
+                                                                    <div class="share-icon-brands absolute pointer-events-none mb-[8px] bottom-[100%] right-[-15px] transition-all duration-300 opacity-0">
+                                                                        <div class="p-[5px] bg-dark text-[#fff] rounded-[7px]">
+                                                                            <div class="flex">
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-facebook-f"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-x-twitter"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-pinterest"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-telegram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="absolute w-[10px] h-[10px] bg-dark right-[15px]" style="clip-path: polygon(0 0, 50% 50%, 100% 0);"></div>
+                                                                    </div>
+                                                                    <i class="fa-solid fa-share-nodes text-[18.27px] leading-[20px]"></i>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#" class="relative block w-[20px] h-[20px] leading-[20px] text-[rgba(255,255,255,0.9)] text-center hover:text-[rgba(255,255,255,0.9)]">
+                                                                        <i class="fa-regular fa-message"></i>
+                                                                        <span class="absolute top-[-4px] right-[-4px] w-[14px] h-[14px] leading-[14px] rounded-[50%] bg-[rgb(28,97,231)] text-[#fff] text-[9px]">0</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relative p-[25px]">
+                                                        <div class="flex mb-[10px] text-[13px] text-[#a5a5a5]">
+                                                            <div class="mr-[10px]">
+                                                                <a href="#" class="hover:text-[#333] transition-all">Cameras</a>
+                                                                <span class="ml-[8px]">/</span>
+                                                            </div>
+                                                            <div>14 Nov 2022</div>
+                                                        </div>
+                                                        <h3 class="text-[18px] text-dark leading-[1.4] font-semibold mb-[10px]"><a href="#" class="hover:text-[#a5a5a5] transition-all">Cameras for Street Photography</a></h3>
+                                                        <div class="text-[#a5a5a5]">
+                                                            <p>At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lin...</p>
+                                                        </div>
+                                                        <div class="mt-[15px]"><a href="#" class="text-[rgb(28,97,231)] text-[13px] font-bold leading-[1]">Continue Reading</a></div>
+                                                    </div>
+                                                </div>
+                                                <div class="Ninth-row-items relative leading-[1.4] px-[10px] flex-shrink-0 lg:w-[calc(100%/4)] md:w-[calc(100%/3)] xs:w-[calc(100%/1)]">
+                                                    <div class="relative overflow-hidden rounded-t-[10px]">
+                                                        <div class="items-img transition-all duration-700"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/11/3-minimalist-desk-setups-entry-header.jpg.webp"></div>
+                                                        <a href="#" class="absolute inset-0"></a>
+                                                        <div class="flex items-center justify-end absolute inset-x-0 bottom-0 py-[15px] px-[20px] pointer-events-none" style="background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);">
+                                                            <div class="flex gap-[5px] items-center text-[rgba(255,255,255,0.9)] text-[14px] flex-grow-1 pointer-events-auto">
+                                                                <img class="w-[22px] rounded-[50%]" src="https://woodmart.xtemos.com/wp-content/uploads/2018/10/avatar-home.jpg.webp">
+                                                                <a href="#" class="hover:text-[rgba(255,255,255,0.9)]">Mr. Mackay</a>
+                                                            </div>
+                                                            <div class="flex gap-[15px] pointer-events-auto">
+                                                                <div class="share-icon relative text-[rgba(255,255,255,0.9)]">
+                                                                    <div class="share-icon-brands absolute pointer-events-none mb-[8px] bottom-[100%] right-[-15px] transition-all duration-300 opacity-0">
+                                                                        <div class="p-[5px] bg-dark text-[#fff] rounded-[7px]">
+                                                                            <div class="flex">
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-facebook-f"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-x-twitter"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-pinterest"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-linkedin-in"></i></a>
+                                                                                <a href="#" class="leading-[1] p-[6px]"><i class="fa-brands fa-telegram"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="absolute w-[10px] h-[10px] bg-dark right-[15px]" style="clip-path: polygon(0 0, 50% 50%, 100% 0);"></div>
+                                                                    </div>
+                                                                    <i class="fa-solid fa-share-nodes text-[18.27px] leading-[20px]"></i>
+                                                                </div>
+                                                                <div>
+                                                                    <a href="#" class="relative block w-[20px] h-[20px] leading-[20px] text-[rgba(255,255,255,0.9)] text-center hover:text-[rgba(255,255,255,0.9)]">
+                                                                        <i class="fa-regular fa-message"></i>
+                                                                        <span class="absolute top-[-4px] right-[-4px] w-[14px] h-[14px] leading-[14px] rounded-[50%] bg-[rgb(28,97,231)] text-[#fff] text-[9px]">0</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relative p-[25px]">
+                                                        <div class="flex mb-[10px] text-[13px] text-[#a5a5a5]">
+                                                            <div class="mr-[10px]">
+                                                                <a href="#" class="hover:text-[#333] transition-all">Desktop</a>
+                                                                <span class="ml-[8px]">/</span>
+                                                            </div>
+                                                            <div>14 Nov 2022</div>
+                                                        </div>
+                                                        <h3 class="text-[18px] text-dark leading-[1.4] font-semibold mb-[10px]"><a href="#" class="hover:text-[#a5a5a5] transition-all">3 Minimalist Desk Setups</a></h3>
+                                                        <div class="text-[#a5a5a5]">
+                                                            <p>Websites in professional use templating systems. Commercial publishing platforms and content management systems ensure that…</p>
+                                                        </div>
+                                                        <div class="mt-[15px]"><a href="#" class="text-[rgb(28,97,231)] text-[13px] font-bold leading-[1]">Continue Reading</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div data-index="2" class="arrow-prev inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[30%] right-[97.5%] lg:right-[98.5%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[-30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                            <div data-index="2" class="arrow-next inline-flex items-center justify-center w-[50px] h-[50px] text-[#333] cursor-pointer absolute top-[30%] left-[97.5%] lg:left-[98.5%] text-[22px] lg:opacity-0 lg:invisible lg:translate-x-[30px] transition-all duration-300 lg:group-hover:!opacity-100 lg:group-hover:!visible lg:group-hover:translate-x-[0px]">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Tenth-row py-[20px] px-[5px] overflow-hidden">
+                            <div class="Tenth-row-container px-[20px] relative overflow-hidden max-h-[205px]">
+                                <div class="mb-[20px]">
+                                    <h4 class="leading-[36px] text-[26px] font-semibold">Online store of household appliances and electronics</h4>
+                                </div>
+                                <div class="mb-[30px] text-[#777777] text-[15px]">
+                                    <p class="mb-[20px]">Then the question arises: where’s the content? Not there yet? That’s not so bad, there’s dummy copy to the rescue. But worse, what if the fish doesn’t fit in the can, the foot’s to big for the boot? Or to small? To short sentences, to many headings, images too large for the proposed design, or too small, or they fit in but it looks iffy for reasons.</p>
+                                    <p>A client that’s unhappy for a reason is a problem, a client that’s unhappy though he or her can’t quite put a finger on it is worse. Chances are there wasn’t collaboration, communication, and checkpoints, there wasn’t a process agreed upon or specified with the granularity required. It’s content strategy gone awry right from the start. If that’s what you think how bout the other way around? How can you evaluate content without design? No typography, no colors, no layout, no styles, all those things that convey the important signals that go beyond the mere textual, hierarchies of information, weight, emphasis, oblique stresses, priorities, all those subtle cues that also have visual and emotional appeal to the reader.</p>
+                                </div>
+                                <div class="collapse-button collapse-button-1">
+                                    <a class="Read-More px-[14px] py-[5px] h-[36px] text-[12px] inline-flex gap-[5px] items-center transition-all relative z-[1] hover:text-[#000] hover:bg-[#e0e0e0]" href="#">Read More
+                                    <span ><i class="fa-solid fa-chevron-down text-[15px]"></i></span>
+                                    </a>
+                                </div>
+                                <div class="collapse-button collapse-button-2 h-[90px] w-[100%]" style="background: linear-gradient(to bottom, transparent 0px, #fff 40px);"></div>
+                            </div>    
+                        </div>
                     </div>
                 </div>
             </div>
+            <footer>
+                <div class="custom-container">
+                    <div class="my-[40px] grid mmd:grid-cols-4 md:grid-cols-2 xs:grid-cols-1">
+                        <div class="px-[15px]">
+                            <div>
+                                <a class="flex gap-[20px] items-center hover:text-[#000]" href="#">
+                                    <h4 class="leading-[28px] text-[19px] font-semibold">Broadway Store</h4>
+                                    <div class="w-[24px] h-[24px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/arrow-on-primary-circle.svg"></div>
+                                </a>    
+                            </div>
+                            <div class="mb-[30px] text-[#767676]"><p>1260 Broadway, San Francisco, CA 94109</p></div>
+                        </div>
+                        <div class="px-[15px]">
+                            <div>
+                                <a class="flex gap-[20px] items-center hover:text-[#000]" href="#">
+                                    <h4 class="leading-[28px] text-[19px] font-semibold">Valencia Store</h4>
+                                    <div class="w-[24px] h-[24px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/arrow-on-primary-circle.svg"></div>
+                                </a>    
+                            </div>
+                            <div class="mb-[30px] text-[#767676]"><p>1501 Valencia St, San Francisco, CA 94110</p></div>
+                        </div>
+                        <div class="px-[15px]">
+                            <div>
+                                <a class="flex gap-[20px] items-center hover:text-[#000]" href="#">
+                                    <h4 class="leading-[28px] text-[19px] font-semibold">Emeryville Store</h4>
+                                    <div class="w-[24px] h-[24px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/arrow-on-primary-circle.svg"></div>
+                                </a>    
+                            </div>
+                            <div class="mb-[30px] text-[#767676]"><p>1034 36th St, Emeryville, CA 94608</p></div>
+                        </div>
+                        <div class="px-[15px]">
+                            <div>
+                                <a class="flex gap-[20px] items-center hover:text-[#000]" href="#">
+                                    <h4 class="leading-[28px] text-[19px] font-semibold">Alameda Store</h4>
+                                    <div class="w-[24px] h-[24px]"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/arrow-on-primary-circle.svg"></div>
+                                </a>    
+                            </div>
+                            <div class="mb-[30px] text-[#767676]"><p>1433 High St, Alameda, CA 94501</p></div>
+                        </div>
+                    </div>
+                    <div class="md:flex">
+                        <div class="px-[15px] mmd:w-[25%] md:w-[66.7%]">
+                            <div class="mb-[20px]"><a href="index.html"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/mega-electronics-logo.svg"></a></div>
+                            <div class="mb-[20px] text-[#767676]"><p>Condimentum adipiscing vel neque dis nam parturient orci at scelerisque.</p></div>
+                            <div class="mb-[10px] text-[18px] font-semibold"><p>Subscribe us</p></div>
+                            <div class="flex mb-[30px] gap-[8.75px] ">
+                                <a class="inline-flex items-center justify-center w-[35px] h-[35px] text-[15px] text-[#fff] bg-[#365493] rounded-[50%] transition-all duration-300 hover:text-[#fff] hover:bg-[#20438c]" href="#"><span class="fa-brands fa-facebook-f"></span></a>
+                                <a class="inline-flex items-center justify-center w-[35px] h-[35px] text-[15px] text-[#fff] bg-[#000] rounded-[50%] transition-all duration-300 hover:text-[#fff]" href="#"><span class="fa-brands fa-x-twitter"></span></a>
+                                <a class="inline-flex items-center justify-center w-[35px] h-[35px] text-[15px] text-[#fff] bg-[#CB2027] rounded-[50%] transition-all duration-300 hover:text-[#fff] hover:bg-[#ac0e15]" href="#"><span class="fa-brands fa-pinterest"></span></a>
+                                <a class="inline-flex items-center justify-center w-[35px] h-[35px] text-[15px] text-[#fff] bg-[#0274B3] rounded-[50%] transition-all duration-300 hover:text-[#fff] hover:bg-[#00598a]" href="#"><span class="fa-brands fa-linkedin-in"></span></a>
+                                <a class="inline-flex items-center justify-center w-[35px] h-[35px] text-[15px] text-[#fff] bg-[#37AEE2] rounded-[50%] transition-all duration-300 hover:text-[#fff] hover:bg-[#268ab5]" href="#"><span class="fa-brands fa-telegram"></span></a>
+                            </div>
+                        </div>
+                        <div class="px-[15px] mmd:w-[16.66666667%] md:w-[33.33333333%%]">
+                            <div class="text-[19px] pb-[15px] font-semibold"><p>Categories</p></div>
+                            <ul class="mb-[30px]">
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Smartphones</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Laptops</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Hardware</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Cameras</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Headphones</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Bathroom</a></li>
+                            </ul>
+                        </div>
+                        <div class="px-[15px] mmd:w-[16.66666667%] md:w-[33.33333333%%]">
+                            <div class="text-[19px] pb-[15px] font-semibold"><p>Useful Links</p></div>
+                            <ul class="mb-[30px]">
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Promotions</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Stores</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Our Contacts</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Delivery & Return</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Outlet</a></li>
+                            </ul>
+                        </div>
+                        <div class="px-[15px] mmd:w-[16.66666667%] md:w-[33.33333333%%]">
+                            <div class="text-[19px] pb-[15px] font-semibold"><p>Useful Links</p></div>
+                            <ul class="mb-[30px]">
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Blog</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Our Contacts</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Promotions</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Stores</a></li>
+                                <li><a class="flex py-[8px] text-[#838383] text-[15px] leading-[1.3]" href="#">Delivery & Return</a></li>
+                            </ul>
+                        </div>
+                        <div class="px-[15px] pb-[10px] mmd:w-[25%] md:w-[33.33333333%%]">
+                            <div class="mb-[20px]">
+                                <div class="mb-[10px]"><h4 class="leading-[28px] text-[19px] font-semibold">Download App on Mobile:</h4></div>
+                                <div class="mb-[10px] leading-[25px]">15% discount on your first purchase</div>
+                            </div>
+                            <div class="inline-block mb-[20px] mr-[15px]"><a href="#"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/google-play.svg"></a></div>
+                            <div class="inline-block mb-[20px]"><a href="#"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/uploads/sites/9/2022/10/app-store.svg"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-container py-[20px] border-t-[1px] border-t-[rgba(0,0,0,0.105)]">
+                    <div class="px-[15px] grid lg:grid-cols-2 xs:justify-center lg:justify-start gap-[20px]">
+                        <div class="text-[12px] text-[#767676]"><a class="text-[#333] font-semibold hover:text-[#333]" href="#">WOODMART</a> © 2024 CREATED BY <a class="text-[#333] font-semibold hover:text-[#333]" href="#">XTEMOS STUDIO</a>. PREMIUM E-COMMERCE SOLUTIONS.</div>
+                        <div class="flex xs:justify-center lg:justify-end"><img src="https://woodmart.xtemos.com/mega-electronics/wp-content/themes/woodmart-dev/images/payments.png"></div>
+                    </div>
+                </div>
+            </footer>
         </div>
             
         <div class="close-side"></div>

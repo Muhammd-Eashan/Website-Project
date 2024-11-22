@@ -62,6 +62,41 @@ let products = [
         "sku" : 2144207,
         "img" : "https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/10/acer-prodesigner-pe320qk-1.jpg",
     },
+    {
+        "id" : 10,
+        "name" : "ARIETE 0979",
+        "discountedprice" : 110,
+        "sku" : 730035,
+        "img" : "https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-0979-1.jpg",
+    },
+    {
+        "id" : 11,
+        "name" : "ARIETE 986",
+        "discountedprice" : 150,
+        "sku" : 730036,
+        "img" : "https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/ariete-986-1.jpg",
+    },
+    {
+        "id" : 12,
+        "name" : "Bamix DeLuxe M200",
+        "discountedprice" : 230,
+        "sku" : 730044,
+        "img" : "https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-deluxe-m200-1.jpg",
+    },
+    {
+        "id" : 13,
+        "name" : "Bamix Luxurylin M200",
+        "discountedprice" : 605,
+        "sku" : 730043,
+        "img" : "https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bamix-luxurylin-m200-1.jpg",
+    },
+    {
+        "id" : 14,
+        "name" : "Bosch KUW20VHF0G",
+        "discountedprice" : 745,
+        "sku" : 730023,
+        "img" : "https://woodmart.b-cdn.net/mega-electronics/wp-content/uploads/sites/9/2022/11/bosch-kuw20vhf0g-1.jpg",
+    },
 ]
 
 let processorOptions = [

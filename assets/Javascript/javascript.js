@@ -76,7 +76,7 @@ document.getElementById("show-password-btn").addEventListener("click", function(
 // COUNTDOWN TIMER
 
 // Set the target date and time
-const targetDate = Date.UTC(2025, 0, 1, 0, 0, 0,);
+const targetDate = Date.UTC(2026, 0, 1, 0, 0, 0,);
 
 function updateCountdown() {
   const now = new Date().getTime();
